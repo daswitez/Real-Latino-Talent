@@ -1,0 +1,13 @@
+# Local/generated files
+.DS_Store
+Thumbs.db
+
+# Original package documentation
+Documentation/
+
+# PHP mail handlers contain SMTP credentials and are not needed for design preview
+main_files/*.php
+main_files/PHPMailer/
+
+# Local server logs
+*.log
