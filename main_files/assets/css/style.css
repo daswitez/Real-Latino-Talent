@@ -55,35 +55,77 @@
 -----------------------------------------------------------------------------------*/
 
 
-@import url('https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
 
 :root {
-    --bgcolor: #A9E448;
+    /* ─── COLORES CORPORATIVOS ─── */
+    --bgcolor:         #CDDE00;  /* RLT Lime - Reemplaza al A9E448 de Growify */
+    --rlt-blue:        #0055B8;  /* Pantone 2935 C — Primario */
+    --rlt-lime:        #CDDE00;  /* Pantone 389 C  — Acento */
+    --rlt-pearl:       #F6F6F6;  /* Gris Perla     — Fondo claro */
+    --rlt-navy:        #08223D;  /* Azul Marino    — Textos/Oscuro */
+    --rlt-white:       #FFFFFF;
+
+    /* ─── COLORES EXTENDIDOS (UI) ─── */
+    --rlt-blue-hover:  #003D85;
+    --rlt-blue-active: #002652;
+    --rlt-blue-light:  #E6F0FA;
+    --rlt-lime-hover:  #A3B200;
+    --rlt-lime-active: #798500;
+    --rlt-lime-light:  #FAFDE6;
+
+    /* ─── TIPOGRAFÍA ─── */
+    --rlt-font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --rlt-font-regular:   400;
+    --rlt-font-bold:      700;
+    --rlt-font-black:     900;
+    --rlt-kerning-body:   0.025em;
+    --rlt-kerning-heading: 0.05em;
+
+    /* ─── LINE HEIGHTS ─── */
+    --rlt-lh-heading:   1.2;
+    --rlt-lh-body:      1.75;
  }
 
 body,html {
-    font-family: "Host Grotesk", sans-serif;
+    font-family: var(--rlt-font-family);
+    color: var(--rlt-navy);
+    letter-spacing: var(--rlt-kerning-body);
     overflow-x: hidden;
 }
 
 p {
     font-size: 16px;
-    line-height: 28px;
-    color: #444;
+    line-height: var(--rlt-lh-body);
+    color: var(--rlt-navy);
     margin: 0;
-    font-weight: 400; 
+    font-weight: var(--rlt-font-regular);
 }
 *{
     margin: 0;
     padding: 0;
 }
 a,h2,h3,h4,h5,h6{
-    color: #000;
+    color: var(--rlt-navy);
     margin: 0;
+    font-family: var(--rlt-font-family);
+}
+h1, h2 {
+    font-weight: var(--rlt-font-black);
+    letter-spacing: var(--rlt-kerning-heading);
+}
+h3, h4, h5, h6 {
+    font-weight: var(--rlt-font-bold);
+    letter-spacing: var(--rlt-kerning-body);
 }
 a{
     text-decoration: none;
     cursor: pointer;
+    color: var(--rlt-blue);
+    transition: color 0.3s ease;
+}
+a:hover {
+    color: var(--rlt-lime);
 }
 h1{
   font-size: 60px;
@@ -458,8 +500,8 @@ a.search-btn svg {
     height: 100%;
     top: 0;
     left: 0;
-    background-color: #0B1714;
-    opacity: .7;
+    background-color: var(--rlt-navy);
+    opacity: .85;
 }
 .hero-text {
     position: relative; 
