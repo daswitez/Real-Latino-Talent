@@ -11,3 +11,6 @@ main_files/PHPMailer/
 
 # Local server logs
 *.log
+
+.agents/
+.impeccable/critique/
