@@ -2900,81 +2900,254 @@
     </div>
   </div>
 </section>
-<section class="gap questions">
+<section class="gap questions" id="rlt-faq-section">
+  <!-- Custom FAQ Section Styles -->
+  <style>
+    #rlt-faq-section {
+      background-color: var(--rlt-pearl, #F6F6F6) !important;
+      background-image: none !important; /* Override template gradient */
+      padding: 100px 0;
+    }
+
+    #rlt-faq-section .heading {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    #rlt-faq-section .heading span {
+      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+      font-weight: 800;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      padding: 6px 18px;
+      background-color: rgba(0, 85, 184, 0.08);
+      color: var(--rlt-blue, #0055B8);
+      border-radius: 50px;
+      display: inline-block;
+      margin-bottom: 15px;
+      border: none;
+      position: relative;
+    }
+
+    #rlt-faq-section .heading span::before {
+      display: none !important;
+    }
+
+    #rlt-faq-section .heading h2 {
+      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+      font-weight: 900 !important;
+      font-size: clamp(2.25rem, 4vw, 3.25rem);
+      line-height: 1.15;
+      color: var(--rlt-navy, #08223D);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    /* Accordion Custom Style */
+    #rlt-faq-section .accordion {
+      max-width: 850px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    #rlt-faq-section .accordion-item {
+      background-color: #ffffff !important;
+      border: 1px solid rgba(8, 34, 61, 0.08) !important;
+      border-radius: 12px !important;
+      margin-bottom: 16px !important;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(8, 34, 61, 0.02);
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      position: relative;
+    }
+
+    #rlt-faq-section .accordion-item:not(:first-of-type) {
+      border-top: 1px solid rgba(8, 34, 61, 0.08) !important;
+    }
+
+    #rlt-faq-section .accordion-item::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 0;
+      background-color: var(--rlt-blue, #0055B8);
+      transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    #rlt-faq-section .accordion-item.active::after {
+      width: 5px;
+    }
+
+    #rlt-faq-section .accordion-item:hover {
+      box-shadow: 0 10px 30px rgba(8, 34, 61, 0.06);
+      transform: translateY(-2px);
+      border-color: rgba(0, 85, 184, 0.15) !important;
+    }
+
+    #rlt-faq-section .accordion-item a.heading {
+      display: flex !important;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 30px !important;
+      background-color: transparent !important;
+      text-decoration: none !important;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    #rlt-faq-section .accordion-item.active a.heading {
+      padding-bottom: 16px !important;
+    }
+
+    #rlt-faq-section .accordion-item a.heading .title {
+      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+      font-weight: 800 !important;
+      font-size: 1.15rem !important;
+      color: var(--rlt-navy, #08223D) !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      text-align: left;
+      transition: color 0.3s ease;
+      max-width: 90%;
+    }
+
+    #rlt-faq-section .accordion-item.active a.heading .title {
+      color: var(--rlt-blue, #0055B8) !important;
+      background-color: transparent !important; /* Override template style */
+    }
+
+    /* Icon circular indicator */
+    #rlt-faq-section .accordion-item .icon {
+      position: static !important;
+      transform: none !important;
+      width: 32px !important;
+      height: 32px !important;
+      border-radius: 50%;
+      background-color: rgba(8, 34, 61, 0.04);
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+      flex-shrink: 0;
+    }
+
+    #rlt-faq-section .accordion-item .icon::before,
+    #rlt-faq-section .accordion-item .icon::after {
+      display: none !important; /* Hide template absolute lines */
+    }
+
+    /* Inject modern chevron icon with CSS */
+    #rlt-faq-section .accordion-item .icon::before {
+      content: '\f107' !important; /* FontAwesome chevron-down */
+      font-family: 'Font Awesome 6 Free' !important;
+      font-weight: 900 !important;
+      display: inline-block !important;
+      position: static !important;
+      transform: none !important;
+      width: auto !important;
+      height: auto !important;
+      background: none !important;
+      color: var(--rlt-navy, #08223D) !important;
+      font-size: 14px !important;
+      transition: all 0.35s ease;
+    }
+
+    #rlt-faq-section .accordion-item.active .icon {
+      background-color: var(--rlt-blue, #0055B8) !important;
+    }
+
+    #rlt-faq-section .accordion-item.active .icon::before {
+      color: #ffffff !important;
+      transform: rotate(180deg) !important;
+    }
+
+    /* Content Area */
+    #rlt-faq-section .accordion-item .content {
+      padding: 0 30px 24px !important;
+      display: none;
+    }
+
+    #rlt-faq-section .accordion-item.active .content {
+      display: block;
+    }
+
+    #rlt-faq-section .accordion-item .content p {
+      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(8, 34, 61, 0.7);
+      margin: 0 !important;
+    }
+  </style>
+
   <div class="container">
     <div class="heading"> 
-      <span>Questions</span>
-      <h2>Have Questions? We’ve Got Answers!</h2>
+      <span>Frequently Asked Questions</span>
+      <h2>Frequently Asked Questions</h2>
     </div> 
+
     <div class="row">
       <div class="accordion">
-          <div class="accordion-item">
-            <a href="#" class="heading">
-                <div class="icon"></div>
-                <div class="title">How can business consulting help my company?</div>
-            </a>
-
-            <div class="content">
-                <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                </p>
-            </div>
+        
+        <!-- FAQ 1 -->
+        <div class="accordion-item active">
+          <a href="#" class="heading">
+            <div class="title">How long does the hiring process take?</div>
+            <div class="icon"></div>
+          </a>
+          <div class="content" style="display: block;">
+            <p>Most roles are matched and candidates presented within 5–10 business days, depending on the complexity of the role.</p>
           </div>
-          <div class="accordion-item active">
-              <a href="#" class="heading" >
-                  <div class="icon"></div>
-                  <div class="title">Will I learn how to code websites as well?</div>
-              </a>
-
-              <div class="content" style="display: block;">
-                  <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                  </p>
-              </div>
-          </div>
-          <div class="accordion-item">
-            <a href="#" class="heading">
-                <div class="icon"></div>
-                <div class="title">Why choose business consulting? </div>
-            </a>
-
-            <div class="content">
-                <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a href="#" class="heading">
-                <div class="icon"></div>
-                <div class="title">Understand and analyze the information?</div>
-            </a>
-
-            <div class="content">
-                <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a href="#" class="heading">
-                <div class="icon"></div>
-                <div class="title">What is the value of business consulting? </div>
-            </a>
-
-            <div class="content">
-                <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                </p>
-            </div>
-          </div>
-          <div class="accordion-item">
-            <a href="#" class="heading">
-                <div class="icon"></div>
-                <div class="title">What is the value of business consulting? </div>
-            </a>
-
-            <div class="content">
-                <p>At the top-right corner of the Page Overview, click the blue Publish button. From the drop-down menu that appears, click Publish Now: See our documentation to learn more about Scheduled Publishing.
-                </p>
-            </div>
-          </div> 
         </div>
+
+        <!-- FAQ 2 -->
+        <div class="accordion-item">
+          <a href="#" class="heading">
+            <div class="title">Do you only provide recruiting services?</div>
+            <div class="icon"></div>
+          </a>
+          <div class="content">
+            <p>No. RLT also provides ongoing support and remote team management assistance after hiring.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="accordion-item">
+          <a href="#" class="heading">
+            <div class="title">What types of roles do you support?</div>
+            <div class="icon"></div>
+          </a>
+          <div class="content">
+            <p>We support sales, marketing, operations, customer service, creative, and administrative roles.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="accordion-item">
+          <a href="#" class="heading">
+            <div class="title">Are candidates full-time or part-time?</div>
+            <div class="icon"></div>
+          </a>
+          <div class="content">
+            <p>We can support both depending on your business needs.</p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="accordion-item">
+          <a href="#" class="heading">
+            <div class="title">What makes RLT different from other staffing companies?</div>
+            <div class="icon"></div>
+          </a>
+          <div class="content">
+            <p>Our approach goes beyond recruitment by providing ongoing communication, support, and long-term partnership — we stay involved so you don't have to manage everything alone.</p>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 </section>
