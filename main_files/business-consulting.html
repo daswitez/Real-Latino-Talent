@@ -245,7 +245,7 @@
      }
    </style>
  </head>
-<body>
+<body class="rlt-business-page">
 <!-- preloader -->
  <div class="preloader">
     <div class="loader"></div> 
@@ -326,15 +326,6 @@
      Real Latino Talent — Remote LATAM Staffing
      ============================================================ -->
 <section class="rlt-hero" id="hero" aria-label="Hero">
-  <!-- Right-side image pane (Desktop absolute 50% width, Mobile standard stacked container) -->
-  <div class="rlt-hero-image-pane">
-    <img
-      src="assets/img/heroeImage.png"
-      alt="Latin American professional working remotely"
-      loading="eager"
-    >
-  </div>
-
   <div class="rlt-hero-content-wrapper w-100">
     <div class="container">
       <div class="row">
@@ -360,6 +351,15 @@
               We help U.S. businesses hire, support, and retain bilingual professionals
               from Latin America - with ongoing management beyond recruitment.
             </p>
+
+            <!-- Hero image: shown before CTAs on mobile, positioned right on desktop -->
+            <div class="rlt-hero-image-pane">
+              <img
+                src="assets/img/heroeImage.png"
+                alt="Latin American professional working remotely"
+                loading="eager"
+              >
+            </div>
 
             <!-- CTA Buttons -->
             <div class="rlt-cta-group">
@@ -3608,6 +3608,462 @@
      </div>
   </div>
 </div>
+<!-- RLT responsive consolidation overrides -->
+<style id="rlt-responsive-overrides">
+  body.rlt-business-page {
+    min-width: 0;
+  }
+
+  body.rlt-business-page .top-bar,
+  body.rlt-business-page .rlt-cta-group,
+  body.rlt-business-page .rlt-trust-line,
+  body.rlt-business-page .role-card-header,
+  body.rlt-business-page .reviews-team,
+  body.rlt-business-page form.footer-form,
+  body.rlt-business-page .copyright,
+  body.rlt-business-page .goole-star {
+    min-width: 0;
+  }
+
+  body.rlt-business-page .rlt-hero h1,
+  body.rlt-business-page .rlt-section-heading h2,
+  body.rlt-business-page .rlt-difference-intro h2,
+  body.rlt-business-page #how-it-works .heading h2,
+  body.rlt-business-page #roles-we-cover .heading h2,
+  body.rlt-business-page #why-latam .wl-heading h2,
+  body.rlt-business-page #why-rlt .heading h2,
+  body.rlt-business-page #rlt-faq-section .heading h2,
+  body.rlt-business-page .heading h2,
+  body.rlt-business-page h1,
+  body.rlt-business-page h2,
+  body.rlt-business-page h3,
+  body.rlt-business-page h4,
+  body.rlt-business-page p,
+  body.rlt-business-page a,
+  body.rlt-business-page span,
+  body.rlt-business-page li {
+    overflow-wrap: anywhere;
+  }
+
+  @media (min-width: 992px) {
+    body.rlt-business-page .rlt-hero-content-wrapper {
+      position: static;
+    }
+
+    body.rlt-business-page .rlt-hero-content > :not(.rlt-hero-image-pane) {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    body.rlt-business-page .top-bar {
+      padding: 18px 0 10px;
+    }
+
+    body.rlt-business-page .header-right {
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 991px) {
+    body.rlt-business-page .rlt-hero {
+      display: flex;
+      flex-direction: column;
+      min-height: auto;
+    }
+
+    body.rlt-business-page .rlt-hero-content-wrapper {
+      order: 1;
+      padding: 120px 0 42px;
+    }
+
+    body.rlt-business-page .rlt-hero-image-pane {
+      order: 2;
+      height: clamp(260px, 48vw, 390px);
+      margin: 0 auto 44px;
+      padding: 0 12px;
+    }
+
+    body.rlt-business-page .rlt-hero-image-pane img {
+      object-position: center top;
+      border-radius: 14px;
+    }
+
+    body.rlt-business-page .rlt-hero .rlt-hero-content,
+    body.rlt-business-page .rlt-hero .rlt-subheadline {
+      max-width: 100%;
+    }
+
+    body.rlt-business-page .rlt-problem-section,
+    body.rlt-business-page .rlt-difference-section,
+    body.rlt-business-page #how-it-works,
+    body.rlt-business-page #roles-we-cover,
+    body.rlt-business-page #why-latam,
+    body.rlt-business-page #why-rlt,
+    body.rlt-business-page #rlt-faq-section {
+      padding: 72px 0;
+    }
+
+    body.rlt-business-page .rlt-section-heading,
+    body.rlt-business-page .rlt-difference-intro,
+    body.rlt-business-page #how-it-works .heading,
+    body.rlt-business-page #roles-we-cover .heading,
+    body.rlt-business-page #why-rlt .heading,
+    body.rlt-business-page #rlt-faq-section .heading {
+      margin-bottom: 38px;
+    }
+
+    body.rlt-business-page .rlt-problem-card,
+    body.rlt-business-page .rlt-diff-block,
+    body.rlt-business-page .role-card,
+    body.rlt-business-page .wl-benefit {
+      padding: 30px 24px;
+    }
+
+    body.rlt-business-page #how-it-works .step-card {
+      padding: 24px;
+    }
+
+    body.rlt-business-page #how-it-works .nav-pills {
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    body.rlt-business-page #how-it-works .nav-pills .nav-link {
+      min-height: 44px;
+    }
+
+    body.rlt-business-page .team {
+      margin-bottom: 24px;
+    }
+  }
+
+  @media (max-width: 767px) {
+    body.rlt-business-page .header-right {
+      display: none;
+    }
+
+    body.rlt-business-page .top-bar {
+      justify-content: center;
+      padding: 14px 0;
+    }
+
+    body.rlt-business-page .logo img {
+      width: min(150px, 48vw);
+    }
+
+    body.rlt-business-page .rlt-hero-content-wrapper {
+      padding-top: 104px;
+      padding-bottom: 34px;
+      text-align: left;
+    }
+
+    body.rlt-business-page .rlt-hero h1 {
+      font-size: clamp(2rem, 10vw, 2.75rem);
+      line-height: 1.12;
+      margin-bottom: 18px;
+    }
+
+    body.rlt-business-page .rlt-hero .rlt-subheadline {
+      font-size: 1rem;
+      line-height: 1.62;
+      margin-bottom: 28px;
+    }
+
+    body.rlt-business-page .rlt-trust-line {
+      align-items: flex-start;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+
+    body.rlt-business-page .rlt-value-bar-inner {
+      grid-template-columns: 1fr;
+    }
+
+    body.rlt-business-page .rlt-value-item,
+    body.rlt-business-page .rlt-value-item:last-child {
+      grid-column: 1;
+      justify-content: flex-start;
+      padding: 18px 20px;
+      border-top: 1px solid rgba(246, 246, 246, 0.08);
+    }
+
+    body.rlt-business-page .rlt-value-item:first-child {
+      border-top: 0;
+    }
+
+    body.rlt-business-page .rlt-value-item + .rlt-value-item::before {
+      display: none;
+    }
+
+    body.rlt-business-page .rlt-problem-grid {
+      grid-template-columns: 1fr;
+    }
+
+    body.rlt-business-page #how-it-works .nav-pills {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      width: 100%;
+    }
+
+    body.rlt-business-page #how-it-works .nav-pills .nav-link {
+      width: 100% !important;
+      padding: 11px 12px;
+      font-size: 0.88rem;
+    }
+
+    body.rlt-business-page #how-it-works .nav-pills .nav-link:last-child {
+      grid-column: 1 / -1;
+    }
+
+    body.rlt-business-page #how-it-works .customized h3 {
+      font-size: clamp(1.55rem, 8vw, 2rem);
+    }
+
+    body.rlt-business-page #how-it-works .customized p,
+    body.rlt-business-page #roles-we-cover .heading p,
+    body.rlt-business-page #why-latam .wl-heading p {
+      font-size: 1rem;
+    }
+
+    body.rlt-business-page #why-latam .row.g-4 > [class*=col-] {
+      width: 100%;
+    }
+
+    body.rlt-business-page .compare-table {
+      border-radius: 12px;
+    }
+
+    body.rlt-business-page .compare-header-cell,
+    body.rlt-business-page .compare-cell {
+      align-items: flex-start;
+      padding: 14px 12px;
+      gap: 8px;
+      font-size: 0.84rem;
+      line-height: 1.35;
+    }
+
+    body.rlt-business-page .compare-header-cell {
+      font-size: 0.76rem;
+      letter-spacing: 0.02em;
+    }
+
+    body.rlt-business-page .compare-row:hover {
+      transform: none;
+    }
+
+    body.rlt-business-page .team {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 18px;
+      padding: 24px;
+    }
+
+    body.rlt-business-page .team img {
+      width: 100% !important;
+      max-height: 320px;
+      object-fit: cover;
+      object-position: top center;
+    }
+
+    body.rlt-business-page .testimonial {
+      width: min(340px, calc(100vw - 40px));
+      padding: 28px;
+    }
+
+    body.rlt-business-page .testimonial-two {
+      align-items: stretch;
+    }
+
+    body.rlt-business-page .testimonial-two-img,
+    body.rlt-business-page .testimonial-two > div {
+      width: 100%;
+    }
+
+    body.rlt-business-page .testimonial-two-img figure img {
+      width: 100%;
+      max-height: 360px;
+      object-fit: cover;
+    }
+
+    body.rlt-business-page #rlt-faq-section .accordion-item a.heading {
+      padding: 20px !important;
+      gap: 14px;
+    }
+
+    body.rlt-business-page #rlt-faq-section .accordion-item .content {
+      padding: 0 20px 20px !important;
+    }
+
+    body.rlt-business-page .pricing,
+    body.rlt-business-page .blog {
+      margin-bottom: 24px;
+    }
+
+    body.rlt-business-page .pricing .btn,
+    body.rlt-business-page .blog .read-more,
+    body.rlt-business-page form.footer-form .btn {
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    body.rlt-business-page .blog .meta {
+      flex-wrap: wrap;
+      row-gap: 8px;
+    }
+  }
+
+  @media (max-width: 575px) {
+    body.rlt-business-page .container {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    body.rlt-business-page .rlt-hero-content-wrapper {
+      padding-top: 92px;
+    }
+
+    body.rlt-business-page .rlt-hero-image-pane {
+      height: 250px;
+      padding: 0 20px;
+      margin-bottom: 36px;
+    }
+
+    body.rlt-business-page .rlt-hero-badge {
+      max-width: 100%;
+      white-space: normal;
+      line-height: 1.3;
+    }
+
+    body.rlt-business-page .rlt-cta-group {
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    body.rlt-business-page .rlt-btn-primary,
+    body.rlt-business-page .rlt-btn-secondary {
+      min-height: 52px;
+      padding: 14px 18px;
+      white-space: normal;
+      line-height: 1.25;
+    }
+
+    body.rlt-business-page .rlt-section-heading h2,
+    body.rlt-business-page .rlt-difference-intro h2,
+    body.rlt-business-page #how-it-works .heading h2,
+    body.rlt-business-page #roles-we-cover .heading h2,
+    body.rlt-business-page #why-latam .wl-heading h2,
+    body.rlt-business-page #why-rlt .heading h2,
+    body.rlt-business-page #rlt-faq-section .heading h2,
+    body.rlt-business-page .heading h2 {
+      font-size: clamp(1.85rem, 9vw, 2.25rem) !important;
+      line-height: 1.14;
+    }
+
+    body.rlt-business-page .rlt-problem-section,
+    body.rlt-business-page .rlt-difference-section,
+    body.rlt-business-page #how-it-works,
+    body.rlt-business-page #roles-we-cover,
+    body.rlt-business-page #why-latam,
+    body.rlt-business-page #why-rlt,
+    body.rlt-business-page #rlt-faq-section,
+    body.rlt-business-page .gap {
+      padding-top: 58px;
+      padding-bottom: 58px;
+    }
+
+    body.rlt-business-page .no-top {
+      padding-top: 0 !important;
+    }
+
+    body.rlt-business-page .no-bottom {
+      padding-bottom: 0 !important;
+    }
+
+    body.rlt-business-page .rlt-problem-card,
+    body.rlt-business-page .rlt-diff-block,
+    body.rlt-business-page .role-card,
+    body.rlt-business-page .wl-benefit,
+    body.rlt-business-page #how-it-works .step-card {
+      padding: 24px 20px;
+    }
+
+    body.rlt-business-page .role-card-number {
+      font-size: 2.35rem;
+    }
+
+    body.rlt-business-page .role-card-icon,
+    body.rlt-business-page .rlt-diff-icon,
+    body.rlt-business-page .wl-benefit-icon {
+      width: 46px;
+      height: 46px;
+    }
+
+    body.rlt-business-page .compare-header-cell .header-icon,
+    body.rlt-business-page .cell-trad .cell-icon,
+    body.rlt-business-page .cell-rlt .cell-icon {
+      display: none;
+    }
+
+    body.rlt-business-page .compare-header-cell,
+    body.rlt-business-page .compare-cell {
+      padding: 13px 10px;
+      font-size: 0.78rem;
+    }
+
+    body.rlt-business-page .pricing-top h4 {
+      font-size: clamp(2.7rem, 15vw, 4rem);
+    }
+
+    body.rlt-business-page .pricing-bottom li {
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.4;
+    }
+
+    body.rlt-business-page .full-container {
+      padding: 28px 22px;
+    }
+
+    body.rlt-business-page .partnership {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 18px;
+    }
+
+    body.rlt-business-page footer .row.gap {
+      row-gap: 28px;
+    }
+
+    body.rlt-business-page .copyright {
+      margin-top: 42px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    body.rlt-business-page .container {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    body.rlt-business-page .rlt-hero h1 {
+      font-size: 1.9rem;
+    }
+
+    body.rlt-business-page .rlt-value-label,
+    body.rlt-business-page .compare-header-cell,
+    body.rlt-business-page .compare-cell {
+      font-size: 0.72rem;
+    }
+
+    body.rlt-business-page .testimonial {
+      padding: 24px 20px;
+    }
+  }
+</style>
+
 <!-- jQuery --> 
 <script src="assets/js/jquery-3.6.0.min.js"></script> 
  <script src="assets/js/bootstrap.min.js"></script>  
@@ -3620,4 +4076,8 @@
 <script src="assets/js/custom.js"></script>  
 <script src="assets/js/sweetalert.min.js"></script>
 <script src="assets/js/contact.js"></script> 
+
+
+
+
 </body> 
