@@ -1452,6 +1452,1032 @@
 </section>
 <!-- rlt how it works section end -->
 
+<!-- ============================================================
+     SECTION 6 — ROLES WE COVER
+     ============================================================ -->
+<style>
+  #roles-we-cover {
+    background-color: var(--rlt-navy, #08223D);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #roles-we-cover .heading {
+    margin-bottom: 60px;
+  }
+
+  #roles-we-cover .heading span {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 18px;
+    background-color: rgba(205, 222, 0, 0.12);
+    color: var(--rlt-lime, #CDDE00);
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: none;
+    position: relative;
+  }
+
+  #roles-we-cover .heading span::before {
+    display: none !important;
+  }
+
+  #roles-we-cover .heading h2 {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 900 !important;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    line-height: 1.15;
+    color: var(--rlt-white, #FFFFFF);
+    max-width: 700px;
+    margin: 0 auto 16px;
+  }
+
+  #roles-we-cover .heading p {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(246, 246, 246, 0.65);
+    max-width: 550px;
+    margin: 0 auto;
+    border-bottom: none !important;
+    padding-bottom: 0;
+  }
+
+  /* ─── Role Card (template-inspired) ─── */
+  .role-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid var(--rlt-lime, #CDDE00);
+    padding: 44px 32px 40px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    height: 100%;
+  }
+
+  /* Diagonal corner cut (à la template) */
+  .role-card::after {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 80px;
+    right: -24px;
+    bottom: -34px;
+    background-color: var(--rlt-navy, #08223D);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    z-index: 3;
+    transition: background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+  }
+
+  /* Full-height fill from bottom on hover */
+  .role-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background-color: var(--rlt-blue, #0055B8);
+    transition: height 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 0;
+  }
+
+  .role-card:hover::before {
+    height: 100%;
+  }
+
+  .role-card:hover::after {
+    background-color: var(--rlt-blue, #0055B8);
+    border-left-color: rgba(255, 255, 255, 0.15);
+  }
+
+  .role-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 85, 184, 0.5);
+    border-top-color: var(--rlt-lime, #CDDE00);
+  }
+
+  .role-card > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Category number + icon row */
+  .role-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 28px;
+  }
+
+  .role-card-number {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 900;
+    font-size: 3rem;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.06);
+    transition: color 0.35s ease;
+  }
+
+  .role-card:hover .role-card-number {
+    color: rgba(255, 255, 255, 0.12);
+  }
+
+  .role-card-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background-color: rgba(205, 222, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .role-card:hover .role-card-icon {
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: scale(1.08);
+  }
+
+  .role-card-icon svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: var(--rlt-lime, #CDDE00);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .role-card:hover .role-card-icon svg {
+    stroke: #ffffff;
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+
+  /* Category Title */
+  .role-card h3 {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 800;
+    font-size: 1.35rem;
+    color: var(--rlt-white, #FFFFFF);
+    padding-bottom: 16px;
+    margin-bottom: 0;
+    transition: color 0.3s ease;
+  }
+
+  /* Category subtitle / separator */
+  .role-card-subtitle {
+    display: block;
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(205, 222, 0, 0.7);
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+  }
+
+  .role-card:hover .role-card-subtitle {
+    color: rgba(205, 222, 0, 1);
+    border-bottom-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Role List */
+  .role-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .role-list li {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: rgba(246, 246, 246, 0.6);
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+  }
+
+  .role-card:hover .role-list li {
+    color: rgba(255, 255, 255, 0.95);
+  }
+
+  .role-list li::before {
+    content: '';
+    width: 8px;
+    height: 2px;
+    background-color: var(--rlt-lime, #CDDE00);
+    flex-shrink: 0;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+  }
+
+  .role-card:hover .role-list li::before {
+    opacity: 1;
+    width: 14px;
+    background-color: #ffffff;
+  }
+
+  /* Arrow indicator at bottom-right */
+  .role-card-arrow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 24px;
+    transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 14px;
+  }
+
+  .role-card:hover .role-card-arrow {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    transform: rotate(-40deg);
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    .role-card {
+      margin-bottom: 24px;
+    }
+  }
+</style>
+
+<section class="gap" id="roles-we-cover">
+  <div class="container">
+    <div class="heading text-center">
+      <span>Roles We Cover</span>
+      <h2>Remote talent tailored to your business needs.</h2>
+      <p>Full-time or part-time — structured around your needs.</p>
+    </div>
+
+    <div class="row">
+      <!-- Sales -->
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <div class="role-card">
+          <div class="role-card-header">
+            <div class="role-card-number">01</div>
+            <div class="role-card-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Sales</h3>
+          <div class="role-card-subtitle">Revenue &amp; Growth</div>
+          <ul class="role-list">
+            <li>Appointment Setters</li>
+            <li>Closers</li>
+            <li>Sales Support</li>
+          </ul>
+          <div class="role-card-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Marketing -->
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <div class="role-card">
+          <div class="role-card-header">
+            <div class="role-card-number">02</div>
+            <div class="role-card-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="2" y1="12" x2="22" y2="12"/>
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Marketing</h3>
+          <div class="role-card-subtitle">Brand &amp; Reach</div>
+          <ul class="role-list">
+            <li>Paid Ads Support</li>
+            <li>Social Media Assistance</li>
+            <li>Graphic Design</li>
+            <li>Branding Support</li>
+          </ul>
+          <div class="role-card-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Operations -->
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <div class="role-card">
+          <div class="role-card-header">
+            <div class="role-card-number">03</div>
+            <div class="role-card-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="3"/>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Operations</h3>
+          <div class="role-card-subtitle">Systems &amp; Support</div>
+          <ul class="role-list">
+            <li>Virtual Assistants</li>
+            <li>Administrative Support</li>
+            <li>CRM Management</li>
+            <li>Customer Service</li>
+          </ul>
+          <div class="role-card-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Creative -->
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <div class="role-card">
+          <div class="role-card-header">
+            <div class="role-card-number">04</div>
+            <div class="role-card-icon">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+            </div>
+          </div>
+          <h3>Creative</h3>
+          <div class="role-card-subtitle">Content &amp; Design</div>
+          <ul class="role-list">
+            <li>Video Editing</li>
+            <li>Content Production</li>
+            <li>Website Management</li>
+          </ul>
+          <div class="role-card-arrow">
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- rlt roles we cover section end -->
+
+<!-- ============================================================
+     SECTION 7 — WHY LATAM
+     ============================================================ -->
+<style>
+  #why-latam {
+    background-color: var(--rlt-blue, #0055B8);
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* Subtle decorative overlay */
+  #why-latam::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  #why-latam .container {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Left column — heading area */
+  #why-latam .wl-heading {
+    padding-right: 40px;
+  }
+
+  #why-latam .wl-eyebrow {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 18px;
+    background-color: rgba(205, 222, 0, 0.15);
+    color: var(--rlt-lime, #CDDE00);
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+
+  #why-latam .wl-heading h2 {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 900 !important;
+    font-size: clamp(2rem, 3.5vw, 2.85rem);
+    line-height: 1.2;
+    color: #ffffff;
+    margin-bottom: 24px;
+  }
+
+  #why-latam .wl-heading p {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+    max-width: 480px;
+    border-bottom: none !important;
+    padding-bottom: 0;
+    padding-top: 0;
+    margin-bottom: 0;
+  }
+
+  /* Decorative accent line */
+  #why-latam .wl-accent-line {
+    width: 50px;
+    height: 3px;
+    background-color: var(--rlt-lime, #CDDE00);
+    border-radius: 2px;
+    margin-top: 32px;
+  }
+
+  /* ─── Benefit Cards (2×2 grid) ─── */
+  .wl-benefit {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 32px 28px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    height: 100%;
+  }
+
+  .wl-benefit::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0%;
+    background-color: var(--rlt-navy, #08223D);
+    transition: height 0.45s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 0;
+  }
+
+  .wl-benefit:hover::before {
+    height: 100%;
+  }
+
+  .wl-benefit:hover {
+    transform: translateY(-8px);
+    border-color: rgba(8, 34, 61, 0.5);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  }
+
+  .wl-benefit > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Icon circle */
+  .wl-benefit-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(205, 222, 0, 0.12);
+    border: 1.5px solid rgba(205, 222, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 22px;
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .wl-benefit:hover .wl-benefit-icon {
+    background-color: var(--rlt-lime, #CDDE00);
+    border-color: var(--rlt-lime, #CDDE00);
+    transform: scale(1.08);
+  }
+
+  .wl-benefit-icon svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: var(--rlt-lime, #CDDE00);
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .wl-benefit:hover .wl-benefit-icon svg {
+    stroke: var(--rlt-navy, #08223D);
+    transform: rotate3d(1, 1, 1, 360deg);
+  }
+
+  .wl-benefit h4 {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .wl-benefit p {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+    transition: color 0.3s ease;
+    border-bottom: none !important;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .wl-benefit:hover h4 {
+    color: var(--rlt-lime, #CDDE00);
+  }
+
+  .wl-benefit:hover p {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  /* Responsive */
+  @media (max-width: 991px) {
+    #why-latam .wl-heading {
+      padding-right: 0;
+      margin-bottom: 50px;
+      text-align: center;
+    }
+    #why-latam .wl-heading p {
+      margin: 0 auto;
+    }
+    #why-latam .wl-accent-line {
+      margin: 32px auto 0;
+    }
+  }
+</style>
+
+<section class="gap" id="why-latam">
+  <div class="container">
+    <div class="row align-items-center">
+
+      <!-- Left: Headline + subtext -->
+      <div class="col-lg-5 col-md-12">
+        <div class="wl-heading">
+          <div class="wl-eyebrow">Why LATAM</div>
+          <h2>Why U.S. companies are building teams in Latin America.</h2>
+          <p>Latin America offers highly capable professionals with strong English proficiency, cultural adaptability, and time-zone compatibility for U.S. businesses.</p>
+          <div class="wl-accent-line"></div>
+        </div>
+      </div>
+
+      <!-- Right: 2×2 Benefit Grid -->
+      <div class="col-lg-7 col-md-12">
+        <div class="row g-4">
+
+          <!-- Benefit 1 -->
+          <div class="col-md-6">
+            <div class="wl-benefit">
+              <div class="wl-benefit-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+              </div>
+              <h4>Time Zone Alignment</h4>
+              <p>Collaborate in real time with professionals working within compatible schedules.</p>
+            </div>
+          </div>
+
+          <!-- Benefit 2 -->
+          <div class="col-md-6">
+            <div class="wl-benefit">
+              <div class="wl-benefit-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                </svg>
+              </div>
+              <h4>Strong English Proficiency</h4>
+              <p>Professionals with strong English skills — ready for client calls, customer support, and daily collaboration.</p>
+            </div>
+          </div>
+
+          <!-- Benefit 3 -->
+          <div class="col-md-6">
+            <div class="wl-benefit">
+              <div class="wl-benefit-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                </svg>
+              </div>
+              <h4>Cultural Compatibility</h4>
+              <p>Professionals familiar with U.S. business expectations and workflows.</p>
+            </div>
+          </div>
+
+          <!-- Benefit 4 -->
+          <div class="col-md-6">
+            <div class="wl-benefit">
+              <div class="wl-benefit-icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                  <polyline points="17 6 23 6 23 12"/>
+                </svg>
+              </div>
+              <h4>Scalable Growth</h4>
+              <p>Build reliable teams without the operational burden of traditional hiring structures.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- rlt why latam section end -->
+
+<!-- ============================================================
+     SECTION 8 — WHY COMPANIES CHOOSE RLT (COMPARISON)
+     ============================================================ -->
+<style>
+  #why-rlt {
+    background-color: var(--rlt-pearl, #F6F6F6);
+    padding: 100px 0;
+    position: relative;
+  }
+
+  #why-rlt .heading {
+    margin-bottom: 60px;
+  }
+
+  #why-rlt .heading span {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 800;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 18px;
+    background-color: rgba(0, 85, 184, 0.08);
+    color: var(--rlt-blue, #0055B8);
+    border-radius: 50px;
+    display: inline-block;
+    margin-bottom: 15px;
+    border: none;
+    position: relative;
+  }
+
+  #why-rlt .heading span::before {
+    display: none !important;
+  }
+
+  #why-rlt .heading h2 {
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 900 !important;
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
+    line-height: 1.15;
+    color: var(--rlt-navy, #08223D);
+    max-width: 650px;
+    margin: 0 auto;
+  }
+
+  /* ─── Comparison Table ─── */
+  .compare-table {
+    max-width: 900px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 16px;
+    border: 1px solid rgba(8, 34, 61, 0.08);
+    background: #ffffff;
+  }
+
+  /* Table Header */
+  .compare-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .compare-header-cell {
+    padding: 28px 36px;
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-weight: 900;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .compare-header-cell.col-trad {
+    background-color: rgba(8, 34, 61, 0.04);
+    color: rgba(8, 34, 61, 0.5);
+    border-bottom: 2px solid rgba(8, 34, 61, 0.06);
+  }
+
+  .compare-header-cell.col-rlt {
+    background-color: var(--rlt-blue, #0055B8);
+    color: #ffffff;
+    border-bottom: 2px solid var(--rlt-blue, #0055B8);
+  }
+
+  .compare-header-cell .header-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .col-trad .header-icon {
+    background-color: rgba(8, 34, 61, 0.08);
+  }
+
+  .col-trad .header-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: rgba(8, 34, 61, 0.4);
+    fill: none;
+    stroke-width: 2;
+    stroke-linecap: round;
+  }
+
+  .col-rlt .header-icon {
+    background-color: rgba(205, 222, 0, 0.2);
+  }
+
+  .col-rlt .header-icon svg {
+    width: 16px;
+    height: 16px;
+    stroke: var(--rlt-lime, #CDDE00);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  /* Table Rows */
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+    position: relative;
+  }
+
+  .compare-row:hover {
+    transform: scale(1.01);
+    z-index: 2;
+    box-shadow: 0 4px 20px rgba(8, 34, 61, 0.06);
+  }
+
+  .compare-row + .compare-row {
+    border-top: 1px solid rgba(8, 34, 61, 0.06);
+  }
+
+  .compare-cell {
+    padding: 22px 36px;
+    font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    font-size: 1rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    transition: all 0.3s ease;
+  }
+
+  /* Traditional (left) cell */
+  .compare-cell.cell-trad {
+    color: rgba(8, 34, 61, 0.5);
+    font-weight: 600;
+    background-color: rgba(8, 34, 61, 0.015);
+  }
+
+  .compare-row:hover .cell-trad {
+    background-color: rgba(8, 34, 61, 0.03);
+  }
+
+  .cell-trad .cell-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(200, 60, 60, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .cell-trad .cell-icon svg {
+    width: 12px;
+    height: 12px;
+    stroke: rgba(200, 60, 60, 0.5);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+  }
+
+  /* RLT (right) cell */
+  .compare-cell.cell-rlt {
+    color: var(--rlt-navy, #08223D);
+    font-weight: 700;
+    background-color: rgba(0, 85, 184, 0.02);
+    border-left: 1px solid rgba(8, 34, 61, 0.04);
+  }
+
+  .compare-row:hover .cell-rlt {
+    background-color: rgba(0, 85, 184, 0.06);
+  }
+
+  .cell-rlt .cell-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: rgba(0, 85, 184, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+  }
+
+  .compare-row:hover .cell-rlt .cell-icon {
+    background-color: var(--rlt-blue, #0055B8);
+    transform: scale(1.15);
+  }
+
+  .cell-rlt .cell-icon svg {
+    width: 12px;
+    height: 12px;
+    stroke: var(--rlt-blue, #0055B8);
+    fill: none;
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.3s ease;
+  }
+
+  .compare-row:hover .cell-rlt .cell-icon svg {
+    stroke: #ffffff;
+  }
+
+  /* Staggered row fade-in animation */
+  .compare-row {
+    opacity: 0;
+    transform: translateY(12px);
+    animation: compareFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  }
+
+  .compare-row:nth-child(2) { animation-delay: 0.1s; }
+  .compare-row:nth-child(3) { animation-delay: 0.2s; }
+  .compare-row:nth-child(4) { animation-delay: 0.3s; }
+  .compare-row:nth-child(5) { animation-delay: 0.4s; }
+
+  @keyframes compareFadeIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .compare-header-cell,
+    .compare-cell {
+      padding: 16px 20px;
+      font-size: 0.9rem;
+    }
+    .compare-header-cell {
+      font-size: 0.85rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .compare-header-cell .header-icon,
+    .cell-trad .cell-icon,
+    .cell-rlt .cell-icon {
+      display: none;
+    }
+    .compare-header-cell,
+    .compare-cell {
+      padding: 14px 16px;
+    }
+  }
+</style>
+
+<section class="gap" id="why-rlt">
+  <div class="container">
+    <div class="heading text-center">
+      <span>The RLT Advantage</span>
+      <h2>Why companies choose Real Latino Talent.</h2>
+    </div>
+
+    <div class="compare-table">
+      <!-- Header -->
+      <div class="compare-header">
+        <div class="compare-header-cell col-trad">
+          <div class="header-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <line x1="18" y1="6" x2="6" y2="18"/>
+              <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+          </div>
+          Traditional Agency
+        </div>
+        <div class="compare-header-cell col-rlt">
+          <div class="header-icon">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+          </div>
+          Real Latino Talent
+        </div>
+      </div>
+
+      <!-- Row 1 -->
+      <div class="compare-row">
+        <div class="compare-cell cell-trad">
+          <div class="cell-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
+          Placement only
+        </div>
+        <div class="compare-cell cell-rlt">
+          <div class="cell-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Ongoing support included
+        </div>
+      </div>
+
+      <!-- Row 2 -->
+      <div class="compare-row">
+        <div class="compare-cell cell-trad">
+          <div class="cell-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
+          Disappears after hiring
+        </div>
+        <div class="compare-cell cell-rlt">
+          <div class="cell-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Active long-term involvement
+        </div>
+      </div>
+
+      <!-- Row 3 -->
+      <div class="compare-row">
+        <div class="compare-cell cell-trad">
+          <div class="cell-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
+          Generic candidate pools
+        </div>
+        <div class="compare-cell cell-rlt">
+          <div class="cell-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Curated, role-specific matching
+        </div>
+      </div>
+
+      <!-- Row 4 -->
+      <div class="compare-row">
+        <div class="compare-cell cell-trad">
+          <div class="cell-icon">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </div>
+          One-time transaction
+        </div>
+        <div class="compare-cell cell-rlt">
+          <div class="cell-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          Long-term partnership
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- rlt why companies choose rlt section end -->
+
 <section class="gap" id="extra-services" style="background-color: #F6F6F6;">
   <div class="container">
     <div class="heading text-center" style="margin-bottom: 40px;">
