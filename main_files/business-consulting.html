@@ -237,9 +237,12 @@
 
       .rlt-hero-image-pane img {
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
+        height: 85%;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        object-fit: contain;
+        object-position: bottom center;
       }
     }
 
@@ -258,7 +261,8 @@
       .rlt-hero-image-pane img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
+        object-position: bottom center;
         border-radius: 16px;
       }
 
@@ -364,7 +368,7 @@
 
               <!-- Hero image: shown before CTAs on mobile, positioned right on desktop -->
               <div class="rlt-hero-image-pane">
-                <img src="assets/img/heroeImage.png" alt="Latin American professional working remotely" loading="eager">
+                <img src="assets/img/smiling-confident-businesswoman-posing-with-arms-folded copia.png" alt="Latin American professional working remotely" loading="eager">
               </div>
 
               <!-- CTA Buttons -->
@@ -3029,10 +3033,6 @@
         display: none;
       }
 
-      #rlt-faq-section .accordion-item.active .content {
-        display: block;
-      }
-
       #rlt-faq-section .accordion-item .content p {
         font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
         font-size: 0.9875rem;
@@ -4493,7 +4493,7 @@
       }
 
       body.rlt-business-page .rlt-hero-image-pane img {
-        object-position: center top;
+        object-position: bottom center;
         border-radius: 14px;
       }
 
