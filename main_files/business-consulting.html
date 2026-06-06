@@ -299,32 +299,23 @@
         </div>
         <nav class="navbar">
           <ul class="navbar-links">
-            <li class="navbar-dropdown menu-item-children">
-              <a href="#">home</a>
-              <ul class="sub-menu">
-                <li><a href="business-consulting.html">business consulting</a></li>
-                <li><a href="project-consulting.html">project consulting</a></li>
-                <li><a href="insurance-consulting.html">insurance consulting</a></li>
-                <li><a href="financial-consulting.html">financial consulting</a></li>
-                <li><a href="click-trough.html">click trough</a></li>
-                <li><a href="subscribe.html">subscribe</a></li>
-                <li><a href="video.html">video</a></li>
-              </ul>
+            <li class="navbar-dropdown">
+              <a href="#how-it-works">How it Works</a>
             </li>
             <li class="navbar-dropdown">
-              <a href="#about"> About </a>
+              <a href="#roles-we-cover">Roles</a>
             </li>
             <li class="navbar-dropdown">
-              <a href="#services">Services</a>
+              <a href="#why-rlt">Why RLT</a>
             </li>
             <li class="navbar-dropdown">
-              <a href="#team">Team</a>
+              <a href="#rlt-about">About Us</a>
             </li>
             <li class="navbar-dropdown">
-              <a href="#pricing">Pricing</a>
+              <a href="#rlt-faq-section">FAQ</a>
             </li>
             <li class="navbar-dropdown">
-              <a href="#blog">blog</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
         </nav>
@@ -1361,6 +1352,7 @@
       padding: 48px;
       max-width: 1050px;
       margin: 0 auto;
+      clip-path: none !important;
     }
 
     #how-it-works .smooth-img {
@@ -1373,7 +1365,8 @@
     }
 
     #how-it-works .smooth-img img {
-      border-radius: 12px;
+      border-radius: 16px !important;
+      clip-path: none !important;
       width: 100%;
       height: 380px;
       object-fit: cover;
@@ -1665,21 +1658,13 @@
       overflow: hidden;
       transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
       height: 100%;
+      border-radius: 16px !important;
+      clip-path: none !important;
     }
 
-    /* Diagonal corner cut (à la template) */
+    /* Diagonal corner cut (à la template) removed as per user request */
     .role-card::after {
-      content: '';
-      position: absolute;
-      width: 60px;
-      height: 80px;
-      right: -24px;
-      bottom: -34px;
-      background-color: var(--rlt-navy, #08223D);
-      border-left: 1px solid rgba(255, 255, 255, 0.1);
-      transform: rotate(45deg);
-      z-index: 3;
-      transition: background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1), border-color 0.4s ease;
+      display: none !important;
     }
 
     /* Full-height fill from bottom on hover */
@@ -1886,6 +1871,7 @@
       transition: transform 0.65s cubic-bezier(0.4, 0, 0.2, 1),
         filter 0.45s ease;
       filter: brightness(0.78) saturate(0.85);
+      clip-path: none !important;
     }
 
     .role-card:hover .role-card-img img {
@@ -2966,24 +2952,7 @@
         min-width: 0;
       }
 
-      .rlt-faq-num {
-        font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
-        font-weight: 900;
-        font-size: 0.8rem;
-        color: var(--rlt-lime, #CDDE00);
-        opacity: 0.5;
-        flex-shrink: 0;
-        width: 28px;
-        text-align: center;
-        letter-spacing: 0.05em;
-        transition: opacity 0.3s ease;
-      }
-
-      #rlt-faq-section .accordion-item.active .rlt-faq-num,
-      #rlt-faq-section .accordion-item:hover .rlt-faq-num {
-        opacity: 1;
-      }
-
+      
       #rlt-faq-section .accordion-item a.heading .title {
         font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
         font-weight: 700 !important;
@@ -3124,9 +3093,7 @@
           padding: 0 18px 20px 18px !important;
         }
 
-        .rlt-faq-num {
-          display: none;
-        }
+        
 
         #rlt-faq-section .accordion-item a.heading .title {
           font-size: 0.95rem !important;
@@ -3171,7 +3138,6 @@
             <div class="accordion-item active">
               <a href="#" class="heading">
                 <div class="rlt-faq-question-wrap">
-                  <span class="rlt-faq-num">01</span>
                   <div class="title">How long does the hiring process take?</div>
                 </div>
                 <div class="icon"></div>
@@ -3185,7 +3151,6 @@
             <div class="accordion-item">
               <a href="#" class="heading">
                 <div class="rlt-faq-question-wrap">
-                  <span class="rlt-faq-num">02</span>
                   <div class="title">Do you only provide recruiting services?</div>
                 </div>
                 <div class="icon"></div>
@@ -3199,7 +3164,6 @@
             <div class="accordion-item">
               <a href="#" class="heading">
                 <div class="rlt-faq-question-wrap">
-                  <span class="rlt-faq-num">03</span>
                   <div class="title">What types of roles do you support?</div>
                 </div>
                 <div class="icon"></div>
@@ -3213,7 +3177,6 @@
             <div class="accordion-item">
               <a href="#" class="heading">
                 <div class="rlt-faq-question-wrap">
-                  <span class="rlt-faq-num">04</span>
                   <div class="title">Are candidates full-time or part-time?</div>
                 </div>
                 <div class="icon"></div>
@@ -3227,7 +3190,6 @@
             <div class="accordion-item">
               <a href="#" class="heading">
                 <div class="rlt-faq-question-wrap">
-                  <span class="rlt-faq-num">05</span>
                   <div class="title">What makes RLT different from other staffing companies?</div>
                 </div>
                 <div class="icon"></div>
