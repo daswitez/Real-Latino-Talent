@@ -282,6 +282,79 @@
     li.menu-item-children>a:before {
       display: none !important;
     }
+
+    /* ─── CUSTOM HEADER NAV & LOGO ─── */
+    .rlt-header {
+      position: fixed !important;
+      top: 0;
+      width: 100%;
+      z-index: 9999;
+      background-color: var(--rlt-navy);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    
+    .top-bar .logo {
+      display: flex;
+      align-items: center;
+    }
+    .top-bar .logo a {
+      display: flex;
+      align-items: center;
+      transform: translateY(-3px); 
+    }
+    
+    .rlt-main-nav {
+      display: none;
+    }
+    .rlt-main-nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .rlt-main-nav-links a {
+      color: var(--rlt-white);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      font-family: var(--rlt-font-family);
+      transition: color 0.3s ease;
+    }
+    .rlt-main-nav-links a:hover {
+      color: var(--rlt-lime);
+    }
+    
+    .rlt-header-cta {
+      display: none;
+    }
+
+    @media (min-width: 992px) {
+      .rlt-main-nav {
+        display: block;
+      }
+      .rlt-header-cta {
+        display: inline-flex;
+        padding: 12px 24px;
+        font-size: 0.85rem;
+        background-color: var(--rlt-lime);
+        color: var(--rlt-navy);
+        font-weight: 800;
+        border-radius: 50px;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .rlt-header-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(205, 222, 0, 0.3);
+        color: var(--rlt-navy);
+      }
+      .header-right .union {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 
@@ -301,29 +374,17 @@
               height="55">
           </a>
         </div>
-        <nav class="navbar">
-          <ul class="navbar-links">
-            <li class="navbar-dropdown">
-              <a href="#how-it-works">How it Works</a>
-            </li>
-            <li class="navbar-dropdown">
-              <a href="#roles-we-cover">Roles</a>
-            </li>
-            <li class="navbar-dropdown">
-              <a href="#why-rlt">Why RLT</a>
-            </li>
-            <li class="navbar-dropdown">
-              <a href="#rlt-about">About Us</a>
-            </li>
-            <li class="navbar-dropdown">
-              <a href="#rlt-faq-section">FAQ</a>
-            </li>
-            <li class="navbar-dropdown">
-              <a href="#contact">Contact</a>
-            </li>
+        <nav class="rlt-main-nav">
+          <ul class="rlt-main-nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#how-it-works">How It Works</a></li>
+            <li><a href="#roles-we-cover">Roles</a></li>
+            <li><a href="#why-rlt">Why RLT</a></li>
+            <li><a href="#rlt-faq-section">FAQ</a></li>
           </ul>
         </nav>
         <div class="header-right">
+          <a href="#contact" class="rlt-header-cta">Book a Call</a>
           <a href="#" class="union" id="show">
             <svg width="24" height="6" viewBox="0 0 24 6" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -1190,7 +1251,7 @@
     <div class="container">
 
       <div class="rlt-difference-intro">
-        <h2>More than recruiting.<br>A long-term remote team partner.</h2>
+        <h2>More than recruiting,<br><span class="rlt-accent" style="font-size: 1.25em; display: inline-block; margin-top: 8px;">a long-term family.</span></h2>
         <p class="rlt-lead">At Real Latino Talent (RLT), we don't just connect businesses with talent - we help build,
           support, and sustain remote teams for long-term success.</p>
       </div>
