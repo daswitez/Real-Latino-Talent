@@ -290,19 +290,26 @@
       width: 100%;
       z-index: 9999;
       background-color: var(--rlt-navy);
+      border-top: 3px solid var(--rlt-lime);
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    
+
+    .top-bar {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+    }
+
     .top-bar .logo {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
     }
     .top-bar .logo a {
       display: flex;
       align-items: center;
-      transform: translateY(-3px); 
     }
-    
+
     .rlt-main-nav {
       display: none;
     }
@@ -325,19 +332,30 @@
     .rlt-main-nav-links a:hover {
       color: var(--rlt-lime);
     }
-    
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-shrink: 0;
+    }
+
     .rlt-header-cta {
       display: none;
     }
 
     @media (min-width: 992px) {
       .rlt-main-nav {
-        display: block;
+        display: flex;
+        flex: 1;
+        justify-content: center;
       }
       .rlt-header-cta {
         display: inline-flex;
+        align-items: center;
         padding: 12px 24px;
         font-size: 0.85rem;
+        letter-spacing: 0.05em;
         background-color: var(--rlt-lime);
         color: var(--rlt-navy);
         font-weight: 800;
@@ -345,14 +363,25 @@
         text-decoration: none;
         text-transform: uppercase;
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        white-space: nowrap;
       }
       .rlt-header-cta:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(205, 222, 0, 0.3);
         color: var(--rlt-navy);
+        text-decoration: none;
       }
       .header-right .union {
         display: none !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .header-right {
+        display: none;
+      }
+      .top-bar {
+        justify-content: center !important;
       }
     }
   </style>
@@ -376,11 +405,11 @@
         </div>
         <nav class="rlt-main-nav">
           <ul class="rlt-main-nav-links">
-            <li><a href="#hero">Home</a></li>
             <li><a href="#how-it-works">How It Works</a></li>
             <li><a href="#roles-we-cover">Roles</a></li>
             <li><a href="#why-rlt">Why RLT</a></li>
             <li><a href="#rlt-faq-section">FAQ</a></li>
+            <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
         <div class="header-right">
@@ -2390,92 +2419,100 @@
   <!-- rlt why latam section end -->
 
   <!-- ============================================================
-     SECTION 8 — WHY COMPANIES CHOOSE RLT (COMPARISON)
+     SECTION 8 — WHY COMPANIES CHOOSE RLT (ADVANTAGE)
      ============================================================ -->
   <style>
+    /* ─── RLT ADVANTAGE SECTION ─── */
     #why-rlt {
       background-color: var(--rlt-pearl, #F6F6F6);
       padding: 100px 0;
-      position: relative;
     }
 
-    #why-rlt .heading {
-      margin-bottom: 60px;
+    .rlt-advantage-heading {
+      text-align: center;
+      margin-bottom: 56px;
     }
 
-    #why-rlt .heading span {
-      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
-      font-weight: 800;
-      font-size: 13px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 6px 18px;
-      background-color: rgba(0, 85, 184, 0.08);
-      color: var(--rlt-blue, #0055B8);
-      border-radius: 50px;
+    .rlt-advantage-badge {
       display: inline-block;
-      margin-bottom: 15px;
-      border: none;
-      position: relative;
+      font-family: var(--rlt-font-family) !important;
+      font-weight: 800;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rlt-blue, #0055B8);
+      border: 1.5px solid rgba(0, 85, 184, 0.35);
+      background-color: transparent;
+      padding: 6px 20px;
+      border-radius: 50px;
+      margin-bottom: 20px;
     }
 
-    #why-rlt .heading span::before {
-      display: none !important;
-    }
-
-    #why-rlt .heading h2 {
-      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
+    .rlt-advantage-heading h2 {
+      font-family: var(--rlt-font-family) !important;
       font-weight: 900 !important;
-      font-size: clamp(2.25rem, 4vw, 3.25rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1.15;
       color: var(--rlt-navy, #08223D);
-      max-width: 650px;
-      margin: 0 auto;
+      margin: 0;
     }
 
-    /* ─── Comparison Table ─── */
-    .compare-table {
-      max-width: 900px;
-      margin: 0 auto;
-      overflow: hidden;
-      border-radius: 16px;
-      border: 1px solid rgba(8, 34, 61, 0.08);
-      background: #ffffff;
-    }
-
-    /* Table Header */
-    .compare-header {
+    .rlt-advantage-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      align-items: start;
+      max-width: 880px;
+      margin: 0 auto;
     }
 
-    .compare-header-cell {
-      padding: 28px 36px;
-      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
-      font-weight: 900;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
+    /* Card wrapper — image block */
+    .rlt-adv-image {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(8, 34, 61, 0.13);
+      transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
+                  box-shadow 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .rlt-advantage-card:hover .rlt-adv-image {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 52px rgba(8, 34, 61, 0.18);
+    }
+
+    .rlt-adv-image img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+
+    /* Label bar overlaid at bottom of image */
+    .rlt-adv-card-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
       display: flex;
       align-items: center;
       gap: 12px;
-    }
-
-    .compare-header-cell.col-trad {
-      background-color: rgba(8, 34, 61, 0.04);
-      color: rgba(8, 34, 61, 0.5);
-      border-bottom: 2px solid rgba(8, 34, 61, 0.06);
-    }
-
-    .compare-header-cell.col-rlt {
-      background-color: var(--rlt-blue, #0055B8);
+      padding: 18px 24px;
+      font-family: var(--rlt-font-family) !important;
+      font-weight: 900;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
       color: #ffffff;
-      border-bottom: 2px solid var(--rlt-blue, #0055B8);
     }
 
-    .compare-header-cell .header-icon {
-      width: 32px;
-      height: 32px;
+    .rlt-adv-label-trad { background-color: var(--rlt-navy, #08223D); }
+    .rlt-adv-label-rlt  { background-color: var(--rlt-blue, #0055B8); }
+
+    .rlt-adv-label-icon {
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -2483,291 +2520,186 @@
       flex-shrink: 0;
     }
 
-    .col-trad .header-icon {
-      background-color: rgba(8, 34, 61, 0.08);
+    .rlt-adv-label-trad .rlt-adv-label-icon {
+      background-color: rgba(220, 60, 60, 0.18);
+      border: 1.5px solid rgba(220, 80, 80, 0.55);
     }
 
-    .col-trad .header-icon svg {
-      width: 16px;
-      height: 16px;
-      stroke: rgba(8, 34, 61, 0.4);
-      fill: none;
-      stroke-width: 2;
-      stroke-linecap: round;
+    .rlt-adv-label-rlt .rlt-adv-label-icon {
+      background-color: rgba(205, 222, 0, 0.18);
+      border: 1.5px solid rgba(205, 222, 0, 0.75);
     }
 
-    .col-rlt .header-icon {
-      background-color: rgba(205, 222, 0, 0.2);
+    /* List below card image */
+    .rlt-adv-list {
+      list-style: none;
+      padding: 22px 2px 0;
+      margin: 0;
     }
 
-    .col-rlt .header-icon svg {
-      width: 16px;
-      height: 16px;
-      stroke: var(--rlt-lime, #CDDE00);
-      fill: none;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-    }
-
-    /* Table Rows */
-    .compare-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-      position: relative;
-    }
-
-    .compare-row:hover {
-      transform: scale(1.01);
-      z-index: 2;
-      box-shadow: 0 4px 20px rgba(8, 34, 61, 0.06);
-    }
-
-    .compare-row+.compare-row {
-      border-top: 1px solid rgba(8, 34, 61, 0.06);
-    }
-
-    .compare-cell {
-      padding: 22px 36px;
-      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
-      font-size: 1rem;
-      line-height: 1.5;
+    .rlt-adv-list li {
+      font-family: var(--rlt-font-family) !important;
+      font-size: 0.975rem;
+      line-height: 1.4;
+      padding: 13px 0;
       display: flex;
       align-items: center;
       gap: 14px;
-      transition: all 0.3s ease;
+      border-bottom: 1px solid rgba(8, 34, 61, 0.07);
     }
 
-    /* Traditional (left) cell */
-    .compare-cell.cell-trad {
-      color: rgba(8, 34, 61, 0.5);
-      font-weight: 600;
-      background-color: rgba(8, 34, 61, 0.015);
-    }
+    .rlt-adv-list li:last-child { border-bottom: none; }
 
-    .compare-row:hover .cell-trad {
-      background-color: rgba(8, 34, 61, 0.03);
-    }
-
-    .cell-trad .cell-icon {
-      width: 24px;
-      height: 24px;
+    .rlt-adv-list-icon {
+      width: 22px;
+      height: 22px;
       border-radius: 50%;
-      background-color: rgba(200, 60, 60, 0.08);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
     }
 
-    .cell-trad .cell-icon svg {
-      width: 12px;
-      height: 12px;
-      stroke: rgba(200, 60, 60, 0.5);
-      fill: none;
-      stroke-width: 2.5;
-      stroke-linecap: round;
+    .rlt-adv-list-trad li {
+      color: rgba(8, 34, 61, 0.4);
+      font-weight: 500;
     }
 
-    /* RLT (right) cell */
-    .compare-cell.cell-rlt {
+    .rlt-adv-list-trad .rlt-adv-list-icon {
+      background-color: rgba(220, 60, 60, 0.08);
+      border: 1.5px solid rgba(220, 60, 60, 0.25);
+    }
+
+    .rlt-adv-list-rlt li {
       color: var(--rlt-navy, #08223D);
       font-weight: 700;
-      background-color: rgba(0, 85, 184, 0.02);
-      border-left: 1px solid rgba(8, 34, 61, 0.04);
     }
 
-    .compare-row:hover .cell-rlt {
-      background-color: rgba(0, 85, 184, 0.06);
-    }
-
-    .cell-rlt .cell-icon {
-      width: 24px;
-      height: 24px;
-      border-radius: 50%;
-      background-color: rgba(0, 85, 184, 0.1);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      transition: all 0.3s ease;
-    }
-
-    .compare-row:hover .cell-rlt .cell-icon {
-      background-color: var(--rlt-blue, #0055B8);
-      transform: scale(1.15);
-    }
-
-    .cell-rlt .cell-icon svg {
-      width: 12px;
-      height: 12px;
-      stroke: var(--rlt-blue, #0055B8);
-      fill: none;
-      stroke-width: 2.5;
-      stroke-linecap: round;
-      stroke-linejoin: round;
-      transition: stroke 0.3s ease;
-    }
-
-    .compare-row:hover .cell-rlt .cell-icon svg {
-      stroke: #ffffff;
-    }
-
-    /* Staggered row fade-in animation */
-    .compare-row {
-      opacity: 0;
-      transform: translateY(12px);
-      animation: compareFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    }
-
-    .compare-row:nth-child(2) {
-      animation-delay: 0.1s;
-    }
-
-    .compare-row:nth-child(3) {
-      animation-delay: 0.2s;
-    }
-
-    .compare-row:nth-child(4) {
-      animation-delay: 0.3s;
-    }
-
-    .compare-row:nth-child(5) {
-      animation-delay: 0.4s;
-    }
-
-    @keyframes compareFadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .rlt-adv-list-rlt .rlt-adv-list-icon {
+      background-color: rgba(0, 85, 184, 0.08);
+      border: 1.5px solid rgba(0, 85, 184, 0.25);
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-
-      .compare-header-cell,
-      .compare-cell {
-        padding: 16px 20px;
-        font-size: 0.9rem;
+    @media (max-width: 767px) {
+      .rlt-advantage-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        max-width: 100%;
       }
 
-      .compare-header-cell {
-        font-size: 0.85rem;
+      .rlt-adv-image img {
+        height: 260px;
       }
+
+      #why-rlt { padding: 64px 0; }
     }
 
     @media (max-width: 480px) {
-
-      .compare-header-cell .header-icon,
-      .cell-trad .cell-icon,
-      .cell-rlt .cell-icon {
-        display: none;
+      .rlt-adv-image img {
+        height: 220px;
       }
 
-      .compare-header-cell,
-      .compare-cell {
-        padding: 14px 16px;
+      .rlt-adv-card-label {
+        padding: 14px 18px;
+        font-size: 0.72rem;
       }
     }
   </style>
 
   <section class="gap" id="why-rlt">
     <div class="container">
-      <div class="heading text-center">
-        <span>The RLT Advantage</span>
-        <h2>Why companies choose Real Latino Talent.</h2>
+
+      <div class="rlt-advantage-heading">
+        <div class="rlt-advantage-badge">The RLT Advantage</div>
+        <h2>Why companies choose<br>Real Latino Talent.</h2>
       </div>
 
-      <div class="compare-table">
-        <!-- Header -->
-        <div class="compare-header">
-          <div class="compare-header-cell col-trad">
-            <div class="header-icon">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
+      <div class="rlt-advantage-grid">
+
+        <!-- Left: Traditional Agency -->
+        <div class="rlt-advantage-card">
+          <div class="rlt-adv-image">
+            <img src="assets/img/sad-man-laptop.png" alt="Traditional Agency">
+            <div class="rlt-adv-card-label rlt-adv-label-trad">
+              <div class="rlt-adv-label-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(220,80,80,0.9)" stroke-width="2.8" stroke-linecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </div>
+              <span>Traditional Agency</span>
             </div>
-            Traditional Agency
           </div>
-          <div class="compare-header-cell col-rlt">
-            <div class="header-icon">
-              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
-            Real Latino Talent
-          </div>
+          <ul class="rlt-adv-list rlt-adv-list-trad">
+            <li>
+              <div class="rlt-adv-list-icon">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(200,60,60,0.7)" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </div>
+              Placement only
+            </li>
+            <li>
+              <div class="rlt-adv-list-icon">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(200,60,60,0.7)" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </div>
+              Disappears after hiring
+            </li>
+            <li>
+              <div class="rlt-adv-list-icon">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(200,60,60,0.7)" stroke-width="2.5" stroke-linecap="round">
+                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+              </div>
+              Generic candidate pools
+            </li>
+          </ul>
         </div>
 
-        <!-- Row 1 -->
-        <div class="compare-row">
-          <div class="compare-cell cell-trad">
-            <div class="cell-icon">
-              <svg viewBox="0 0 24 24">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
+        <!-- Right: Real Latino Talent -->
+        <div class="rlt-advantage-card">
+          <div class="rlt-adv-image">
+            <img src="assets/img/smiling-man-laptop.png" alt="Real Latino Talent">
+            <div class="rlt-adv-card-label rlt-adv-label-rlt">
+              <div class="rlt-adv-label-icon">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#CDDE00" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              <span>Real Latino Talent</span>
             </div>
-            Placement only
           </div>
-          <div class="compare-cell cell-rlt">
-            <div class="cell-icon">
-              <svg viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
-            Ongoing support included
-          </div>
+          <ul class="rlt-adv-list rlt-adv-list-rlt">
+            <li>
+              <div class="rlt-adv-list-icon">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0055B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              Ongoing support included
+            </li>
+            <li>
+              <div class="rlt-adv-list-icon">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0055B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              Active long-term involvement
+            </li>
+            <li>
+              <div class="rlt-adv-list-icon">
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0055B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"/>
+                </svg>
+              </div>
+              Curated, role-specific matching
+            </li>
+          </ul>
         </div>
-
-        <!-- Row 2 -->
-        <div class="compare-row">
-          <div class="compare-cell cell-trad">
-            <div class="cell-icon">
-              <svg viewBox="0 0 24 24">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </div>
-            Disappears after hiring
-          </div>
-          <div class="compare-cell cell-rlt">
-            <div class="cell-icon">
-              <svg viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
-            Active long-term involvement
-          </div>
-        </div>
-
-        <!-- Row 3 -->
-        <div class="compare-row">
-          <div class="compare-cell cell-trad">
-            <div class="cell-icon">
-              <svg viewBox="0 0 24 24">
-                <line x1="18" y1="6" x2="6" y2="18" />
-                <line x1="6" y1="6" x2="18" y2="18" />
-              </svg>
-            </div>
-            Generic candidate pools
-          </div>
-          <div class="compare-cell cell-rlt">
-            <div class="cell-icon">
-              <svg viewBox="0 0 24 24">
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
-            </div>
-            Curated, role-specific matching
-          </div>
-        </div>
-
 
       </div>
-
     </div>
   </section>
   <!-- rlt why companies choose rlt section end -->
