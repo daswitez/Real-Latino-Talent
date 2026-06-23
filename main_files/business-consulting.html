@@ -4871,7 +4871,94 @@
   <script src="assets/js/sweetalert.min.js"></script>
   <script src="assets/js/contact.js"></script>
 
+  <script>
+  (function () {
+    function initReveal() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      gsap.registerPlugin(ScrollTrigger);
 
+      var easeText  = 'power3.out';
+      var easeCard  = 'power4.out';
+      var easeSlide = 'expo.out';
 
+      /* Animate each element individually */
+      function revealEach(selector, vars) {
+        gsap.utils.toArray(selector).forEach(function (el) {
+          gsap.from(el, Object.assign({
+            ease: easeText,
+            scrollTrigger: { trigger: el, start: 'top 94%', once: true }
+          }, vars));
+        });
+      }
+
+      /* Animate elements in groups with stagger */
+      function revealGroup(selector, vars, stagger) {
+        var groups = {};
+        gsap.utils.toArray(selector).forEach(function (el) {
+          var key = el.closest('section') ? el.closest('section').id || 'root' : 'root';
+          if (!groups[key]) groups[key] = [];
+          groups[key].push(el);
+        });
+        Object.values(groups).forEach(function (batch) {
+          gsap.from(batch, Object.assign({
+            ease: easeCard,
+            stagger: stagger || 0.16,
+            scrollTrigger: { trigger: batch[0], start: 'top 92%', once: true }
+          }, vars));
+        });
+      }
+
+      /* ── Value bar ── */
+      revealEach('.rlt-value-bar-inner', { y: 50, opacity: 0, duration: 0.9 });
+
+      /* ── Problem section ── */
+      revealEach('.rlt-problem-section .rlt-problem-intro', { y: 55, opacity: 0, duration: 0.85 });
+      revealGroup('.rlt-problem-card', { y: 90, opacity: 0, scale: 0.95, duration: 1.0 }, 0.17);
+
+      /* ── Difference section ── */
+      revealEach('.rlt-difference-intro', { y: 55, opacity: 0, duration: 0.85 });
+      revealGroup('.rlt-diff-block', { y: 75, opacity: 0, scale: 0.96, duration: 0.9 }, 0.16);
+
+      /* ── How it works ── */
+      revealEach('#how-it-works .sub-heading, #how-it-works .heading', { y: 50, opacity: 0, duration: 0.85 });
+      revealGroup('#how-it-works .nav-pills .nav-item', { y: 35, opacity: 0, duration: 0.7 }, 0.1);
+
+      /* ── Roles ── */
+      revealEach('#roles-we-cover .sub-heading, #roles-we-cover .heading', { y: 50, opacity: 0, duration: 0.85 });
+      revealGroup('.role-card', { y: 80, opacity: 0, scale: 0.95, duration: 0.95 }, 0.13);
+
+      /* ── Why LATAM ── */
+      revealEach('#why-latam .sub-heading, #why-latam .heading, #why-latam h2', { y: 50, opacity: 0, duration: 0.85 });
+      revealGroup('#why-latam [class*="col-"]', { y: 70, opacity: 0, scale: 0.96, duration: 0.95 }, 0.15);
+
+      /* ── Why RLT / Advantage ── */
+      revealEach('.rlt-advantage-badge', { y: 28, opacity: 0, duration: 0.65 });
+      revealEach('.rlt-advantage-heading h2', { y: 50, opacity: 0, duration: 0.85 });
+      revealGroup('.rlt-advantage-card', { y: 100, opacity: 0, scale: 0.93, duration: 1.05 }, 0.2);
+
+      /* ── FAQ ── */
+      revealEach('#rlt-faq-section .heading, #rlt-faq-section .sub-heading', { y: 50, opacity: 0, duration: 0.85 });
+      revealGroup('#rlt-faq-section .accordion-item', { y: 40, opacity: 0, duration: 0.7 }, 0.11);
+
+      /* ── About ── */
+      revealEach('.rlt-about-badge', { y: 28, opacity: 0, duration: 0.65 });
+      revealEach('.rlt-about-content', { x: -80, opacity: 0, duration: 1.05, ease: easeSlide });
+      revealEach('.rlt-about-image', { x: 80, opacity: 0, duration: 1.05, ease: easeSlide });
+
+      /* ── Testimonials ── */
+      revealGroup('.testimonial', { y: 70, opacity: 0, scale: 0.95, duration: 0.95 }, 0.15);
+
+      /* ── Final CTA / Contact ── */
+      revealEach('#rlt-final-cta h2, #rlt-final-cta .sub-heading', { y: 50, opacity: 0, duration: 0.85 });
+      revealGroup('#rlt-final-cta .form-group, #rlt-final-cta .col-md-6', { y: 40, opacity: 0, duration: 0.75 }, 0.11);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initReveal);
+    } else {
+      initReveal();
+    }
+  })();
+  </script>
 
 </body>
