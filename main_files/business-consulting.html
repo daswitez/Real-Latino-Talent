@@ -2441,8 +2441,8 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--rlt-blue, #0055B8);
-      border: 1.5px solid rgba(0, 85, 184, 0.35);
-      background-color: transparent;
+      border: none;
+      background-color: rgba(0, 85, 184, 0.08);
       padding: 6px 20px;
       border-radius: 50px;
       margin-bottom: 20px;
@@ -2469,7 +2469,7 @@
     /* Card wrapper — image block */
     .rlt-adv-image {
       position: relative;
-      border-radius: 16px;
+      border-radius: 16px 16px 0 0;
       overflow: hidden;
       box-shadow: 0 8px 40px rgba(8, 34, 61, 0.13);
       transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
@@ -2521,8 +2521,8 @@
     }
 
     .rlt-adv-label-trad .rlt-adv-label-icon {
-      background-color: rgba(220, 60, 60, 0.18);
-      border: 1.5px solid rgba(220, 80, 80, 0.55);
+      background-color: #F4E9EA;
+      border: none;
     }
 
     .rlt-adv-label-rlt .rlt-adv-label-icon {
@@ -2530,10 +2530,20 @@
       border: 1.5px solid rgba(205, 222, 0, 0.75);
     }
 
+    /* List card wrapper */
+    .rlt-adv-list-wrap {
+      background-color: #FAFCFE;
+      border: 1px solid #E9EEF2;
+      border-top: none;
+      border-radius: 0 0 16px 16px;
+      padding: 0;
+      overflow: hidden;
+    }
+
     /* List below card image */
     .rlt-adv-list {
       list-style: none;
-      padding: 22px 2px 0;
+      padding: 0;
       margin: 0;
     }
 
@@ -2541,18 +2551,18 @@
       font-family: var(--rlt-font-family) !important;
       font-size: 0.975rem;
       line-height: 1.4;
-      padding: 13px 0;
+      padding: 22px 22px;
       display: flex;
       align-items: center;
       gap: 14px;
-      border-bottom: 1px solid rgba(8, 34, 61, 0.07);
+      border-bottom: 1px solid #E7EAEC;
     }
 
     .rlt-adv-list li:last-child { border-bottom: none; }
 
     .rlt-adv-list-icon {
-      width: 22px;
-      height: 22px;
+      width: 24px;
+      height: 24px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -2566,8 +2576,7 @@
     }
 
     .rlt-adv-list-trad .rlt-adv-list-icon {
-      background-color: rgba(220, 60, 60, 0.08);
-      border: 1.5px solid rgba(220, 60, 60, 0.25);
+      background-color: rgba(200, 60, 60, 0.08);
     }
 
     .rlt-adv-list-rlt li {
@@ -2576,8 +2585,7 @@
     }
 
     .rlt-adv-list-rlt .rlt-adv-list-icon {
-      background-color: rgba(0, 85, 184, 0.08);
-      border: 1.5px solid rgba(0, 85, 184, 0.25);
+      background-color: rgba(0, 85, 184, 0.1);
     }
 
     /* Responsive */
@@ -2623,39 +2631,41 @@
             <img src="assets/img/sad-man-laptop.png" alt="Traditional Agency">
             <div class="rlt-adv-card-label rlt-adv-label-trad">
               <div class="rlt-adv-label-icon">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="rgba(220,80,80,0.9)" stroke-width="2.8" stroke-linecap="round">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#D36868" stroke-width="2.8" stroke-linecap="round">
                   <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
                 </svg>
               </div>
               <span>Traditional Agency</span>
             </div>
           </div>
-          <ul class="rlt-adv-list rlt-adv-list-trad">
-            <li>
-              <div class="rlt-adv-list-icon">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(200,60,60,0.7)" stroke-width="2.5" stroke-linecap="round">
-                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>
-              </div>
-              Placement only
-            </li>
-            <li>
-              <div class="rlt-adv-list-icon">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(200,60,60,0.7)" stroke-width="2.5" stroke-linecap="round">
-                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>
-              </div>
-              Disappears after hiring
-            </li>
-            <li>
-              <div class="rlt-adv-list-icon">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="rgba(200,60,60,0.7)" stroke-width="2.5" stroke-linecap="round">
-                  <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>
-              </div>
-              Generic candidate pools
-            </li>
-          </ul>
+          <div class="rlt-adv-list-wrap">
+            <ul class="rlt-adv-list rlt-adv-list-trad">
+              <li>
+                <div class="rlt-adv-list-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C83C3C" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                  </svg>
+                </div>
+                Placement only
+              </li>
+              <li>
+                <div class="rlt-adv-list-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C83C3C" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                  </svg>
+                </div>
+                Disappears after hiring
+              </li>
+              <li>
+                <div class="rlt-adv-list-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#C83C3C" stroke-opacity="0.5" stroke-width="2.5" stroke-linecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                  </svg>
+                </div>
+                Generic candidate pools
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Right: Real Latino Talent -->
@@ -2671,32 +2681,34 @@
               <span>Real Latino Talent</span>
             </div>
           </div>
-          <ul class="rlt-adv-list rlt-adv-list-rlt">
-            <li>
-              <div class="rlt-adv-list-icon">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0055B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </div>
-              Ongoing support included
-            </li>
-            <li>
-              <div class="rlt-adv-list-icon">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0055B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </div>
-              Active long-term involvement
-            </li>
-            <li>
-              <div class="rlt-adv-list-icon">
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#0055B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"/>
-                </svg>
-              </div>
-              Curated, role-specific matching
-            </li>
-          </ul>
+          <div class="rlt-adv-list-wrap">
+            <ul class="rlt-adv-list rlt-adv-list-rlt">
+              <li>
+                <div class="rlt-adv-list-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0055B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                Ongoing support included
+              </li>
+              <li>
+                <div class="rlt-adv-list-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0055B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                Active long-term involvement
+              </li>
+              <li>
+                <div class="rlt-adv-list-icon">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#0055B8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="20 6 9 17 4 12"/>
+                  </svg>
+                </div>
+                Curated, role-specific matching
+              </li>
+            </ul>
+          </div>
         </div>
 
       </div>
