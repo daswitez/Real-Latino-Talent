@@ -398,8 +398,111 @@
 
 <body class="rlt-business-page">
   <!-- preloader -->
+  <style>
+    /* ─── RLT branded preloader (scoped to business page) ─── */
+    body.rlt-business-page .preloader {
+      background-color: #ffffff;
+      flex-direction: column;
+    }
+
+    .rlt-preloader-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .rlt-pl-mark {
+      width: 76px;
+      height: 76px;
+      overflow: visible;
+      transform-origin: center;
+      animation: rltMarkBreath 1.8s infinite ease-in-out;
+    }
+
+    .rlt-pl-mark .seg {
+      fill: #0055B8;
+      transform-origin: center;
+      animation: rltSegPulse 1.25s infinite ease-in-out;
+    }
+
+    .rlt-pl-mark .seg2 { animation-delay: 0.14s; }
+    .rlt-pl-mark .seg3 { animation-delay: 0.28s; }
+    .rlt-pl-mark .seg4 { animation-delay: 0.42s; }
+
+    .rlt-pl-word {
+      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif);
+      font-weight: 800;
+      font-size: 0.95rem;
+      letter-spacing: 0.34em;
+      text-indent: 0.34em;
+      color: #08223D;
+      animation: rltFadeUp 0.7s 0.1s ease both;
+    }
+
+    .rlt-pl-bar {
+      position: relative;
+      width: 180px;
+      height: 3px;
+      border-radius: 3px;
+      background-color: rgba(8, 34, 61, 0.1);
+      overflow: hidden;
+      animation: rltFadeUp 0.7s 0.2s ease both;
+    }
+
+    .rlt-pl-bar span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 40%;
+      border-radius: inherit;
+      background-color: #0055B8;
+      animation: rltBarSweep 1.15s infinite cubic-bezier(0.65, 0, 0.35, 1);
+    }
+
+    @keyframes rltMarkBreath {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      50%      { transform: scale(1.07) rotate(4deg); }
+    }
+
+    @keyframes rltSegPulse {
+      0%, 100% { opacity: 0.25; }
+      50%      { opacity: 1; }
+    }
+
+    @keyframes rltBarSweep {
+      0%   { transform: translateX(-110%); }
+      100% { transform: translateX(360%); }
+    }
+
+    @keyframes rltFadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .rlt-pl-mark,
+      .rlt-pl-mark .seg,
+      .rlt-pl-bar span,
+      .rlt-pl-word,
+      .rlt-pl-bar { animation: none; }
+      .rlt-pl-mark .seg { opacity: 1; }
+    }
+  </style>
   <div class="preloader">
-    <div class="loader"></div>
+    <div class="rlt-preloader-inner">
+      <svg class="rlt-pl-mark" viewBox="0 0 174.04 168.51" aria-hidden="true">
+        <path class="seg seg1" d="M95.98,0l18.89,13.55c6.23,4.47,14.58,4.63,20.98.4L156.95,0h-60.97Z" />
+        <path class="seg seg2" d="M154.79,32.88c-4.37,6.4-4.29,14.85.2,21.16l19.05,25.52V4.71l-19.25,28.16Z" />
+        <path class="seg seg3"
+          d="M138.98,69.87c-6.26-4.57-14.71-4.74-21.16-.45l-22.93,16.3v82.78l43.03-40v-.04l35.27-32.79-34.22-25.81Z" />
+        <path class="seg seg4"
+          d="M99.12,50.27c4.3-6.35,4.24-14.7-.16-20.98L78.73.39l-42.61,39.61v.04L0,73.61h82.09l17.03-23.35Z" />
+      </svg>
+      <div class="rlt-pl-word">REAL LATINO TALENT</div>
+      <div class="rlt-pl-bar"><span></span></div>
+    </div>
   </div>
   <!-- preloader end -->
   <!-- header -->
