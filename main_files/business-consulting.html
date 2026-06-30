@@ -11,7 +11,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
     rel="stylesheet">
-  <link rel="icon" href="assets/img/favicon.png">
+  <link rel="icon" type="image/svg+xml" href="assets/logos svg/2. Logos SVG/Variación abreviada 1.svg">
+  <link rel="icon" type="image/png" href="assets/img/favicon-rlt.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-rlt.png">
   <!-- CSS only -->
   <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
   <!-- fancybox -->
@@ -1028,7 +1030,7 @@
       font-size: clamp(1.75rem, 3.5vw, 2.625rem);
       line-height: 1.15;
       letter-spacing: 0.03em;
-      text-transform: uppercase;
+      text-transform: none;
       color: var(--rlt-navy, #08223D);
       margin-bottom: 16px;
     }
@@ -1284,8 +1286,8 @@
     <div class="container">
 
       <div class="rlt-difference-intro">
-        <h2>More than recruiting,<br><span class="rlt-accent"
-            style="font-size: 1.25em; display: inline-block; margin-top: 8px;">a long-term family.</span></h2>
+        <h2>More than recruiting,<br><span class="rlt-accent" style="display: inline-block; margin-top: 8px;">a
+            long-term family.</span></h2>
         <p class="rlt-lead">At Real Latino Talent (RLT), we don't just connect businesses with talent - we help build,
           support, and sustain remote teams for long-term success.</p>
       </div>
@@ -3718,18 +3720,18 @@
       box-shadow: 0 12px 40px rgba(0, 85, 184, 0.12);
     }
 
-    /* ── Left: text column (46% of card) ── */
+    /* ── Left: text column (40% of card) ── */
     .rlt-meet-text {
-      flex: 0 0 46%;
+      flex: 0 0 40%;
       display: flex;
       flex-direction: column;
       min-width: 0;
     }
 
-    /* Upper block — fixed 55% of card height (matches SVG separator position) */
+    /* Upper block — fixed 42% of card height (matches SVG separator position) */
     .rlt-meet-top {
-      flex: 0 0 55%;
-      padding: 44px 24px 20px 28px;
+      flex: 0 0 42%;
+      padding: 36px 22px 16px 28px;
       overflow: hidden;
     }
 
@@ -3737,12 +3739,19 @@
     .rlt-meet-name {
       font-family: var(--rlt-font-family) !important;
       font-weight: 900 !important;
-      font-size: clamp(1.5rem, 2vw, 1.85rem);
+      font-size: clamp(1.35rem, 1.7vw, 1.6rem);
       line-height: 1.15;
       letter-spacing: -0.02em;
       color: var(--rlt-navy, #08223D);
       margin: 0 0 14px;
-      word-break: break-word;
+      word-break: normal;
+      overflow-wrap: normal;
+    }
+
+    /* Override global overflow-wrap so names never split mid-word */
+    body.rlt-business-page .rlt-meet-name {
+      overflow-wrap: normal;
+      word-break: normal;
     }
 
     /* Role */
@@ -3776,7 +3785,7 @@
       font-family: var(--rlt-font-family) !important;
       font-weight: 400;
       font-size: 0.9375rem;
-      line-height: 1.65;
+      line-height: 1.5;
       color: rgba(8, 34, 61, 0.6);
       margin: 0;
     }
@@ -3792,7 +3801,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: top center;
+      object-position: bottom center;
       display: block;
       transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
     }
