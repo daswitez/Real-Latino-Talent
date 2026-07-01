@@ -425,24 +425,52 @@
       animation: rltSegPulse 1.25s infinite ease-in-out;
     }
 
-    .rlt-pl-mark .seg2 { animation-delay: 0.14s; }
-    .rlt-pl-mark .seg3 { animation-delay: 0.28s; }
-    .rlt-pl-mark .seg4 { animation-delay: 0.42s; }
+    .rlt-pl-mark .seg2 {
+      animation-delay: 0.14s;
+    }
+
+    .rlt-pl-mark .seg3 {
+      animation-delay: 0.28s;
+    }
+
+    .rlt-pl-mark .seg4 {
+      animation-delay: 0.42s;
+    }
 
     @keyframes rltMarkBreath {
-      0%, 100% { transform: scale(1) rotate(0deg); }
-      50%      { transform: scale(1.07) rotate(4deg); }
+
+      0%,
+      100% {
+        transform: scale(1) rotate(0deg);
+      }
+
+      50% {
+        transform: scale(1.07) rotate(4deg);
+      }
     }
 
     @keyframes rltSegPulse {
-      0%, 100% { opacity: 0.25; }
-      50%      { opacity: 1; }
+
+      0%,
+      100% {
+        opacity: 0.25;
+      }
+
+      50% {
+        opacity: 1;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
+
       .rlt-pl-mark,
-      .rlt-pl-mark .seg { animation: none; }
-      .rlt-pl-mark .seg { opacity: 1; }
+      .rlt-pl-mark .seg {
+        animation: none;
+      }
+
+      .rlt-pl-mark .seg {
+        opacity: 1;
+      }
     }
   </style>
   <div class="preloader">
@@ -3647,9 +3675,11 @@
               loading="lazy">
             <div class="rlt-about-photo-badge">
               <div class="badge-initial">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
                 </svg>
               </div>
               <div class="badge-info">
@@ -3664,9 +3694,11 @@
             <img src="assets/img/founders-rlt.png" alt="Mauro Antelo — Co-Founder of Real Latino Talent" loading="lazy">
             <div class="rlt-about-photo-badge">
               <div class="badge-initial">
-                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                  stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon
+                    points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                  </polygon>
                 </svg>
               </div>
               <div class="badge-info">
@@ -3846,7 +3878,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: bottom center;
+      object-position: top center;
       display: block;
       transition: transform 0.55s cubic-bezier(0.25, 1, 0.5, 1);
     }
@@ -3940,7 +3972,7 @@
             </div>
           </div>
           <div class="rlt-meet-photo">
-            <img src="assets/img/luciaCamacho.jpg" alt="Lucía Camacho — Real Latino Talent" loading="lazy">
+            <img src="assets/img/Lucia-Camacho.png" alt="Lucía Camacho — Real Latino Talent" loading="lazy">
           </div>
         </div>
 
@@ -3957,7 +3989,7 @@
             </div>
           </div>
           <div class="rlt-meet-photo">
-            <img src="assets/img/nazarenaLeigue.jpg" alt="Nazarena Leigue — Real Latino Talent" loading="lazy">
+            <img src="assets/img/Nazarena-Leigue.png" alt="Nazarena Leigue — Real Latino Talent" loading="lazy">
           </div>
         </div>
 
@@ -3975,7 +4007,7 @@
             </div>
           </div>
           <div class="rlt-meet-photo">
-            <img src="assets/img/andresVargas.jpg" alt="Andrés Vargas — Real Latino Talent" loading="lazy">
+            <img src="assets/img/Andres-Vargas.png" alt="Andrés Vargas — Real Latino Talent" loading="lazy">
           </div>
         </div>
 
