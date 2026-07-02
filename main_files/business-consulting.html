@@ -502,6 +502,7 @@
             <li><a href="#roles-we-cover">Roles</a></li>
             <li><a href="#why-rlt">Why RLT</a></li>
             <li><a href="#rlt-faq-section">FAQ</a></li>
+            <li><a href="#rlt-about">Who We Are</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -1014,193 +1015,50 @@
     .rlt-problem-card-body {
       padding: 28px 30px 26px;
     }
-  </style>
 
-  <section class="rlt-problem-section" id="problem">
-    <div class="container">
-
-      <div class="rlt-section-heading">
-        <h2>Hiring remotely is <span class="rlt-accent">hard.</span><br>Managing remotely is harder.</h2>
-        <p>Many growing businesses struggle not only with finding reliable talent, but also with communication,
-          accountability, and long-term team stability.</p>
-      </div>
-
-      <div class="rlt-problem-grid">
-
-        <!-- Card 1 -->
-        <div class="rlt-problem-card">
-          <div class="rlt-problem-card-image">
-            <img src="./assets/img/recruiting.jpg" alt="Recruiting takes time" loading="lazy">
-          </div>
-          <div class="rlt-problem-card-body">
-            <div class="rlt-problem-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10" />
-                <polyline points="12 6 12 12 16 14" />
-              </svg>
-            </div>
-            <h3>Recruiting Takes Time</h3>
-            <p>Sourcing qualified candidates takes weeks you don't have - and pulls you away from running your business.
-            </p>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="rlt-problem-card">
-          <div class="rlt-problem-card-image">
-            <img src="./assets/img/communicationsGaps.jpg" alt="Communication gaps in remote teams" loading="lazy">
-          </div>
-          <div class="rlt-problem-card-body">
-            <div class="rlt-problem-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
-              </svg>
-            </div>
-            <h3>Communication Gaps Create Friction</h3>
-            <p>Language barriers, lack of follow-through, and inconsistent processes can affect performance and customer
-              experience.</p>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="rlt-problem-card">
-          <div class="rlt-problem-card-image">
-            <img src="./assets/img/mostAgencies.jpg" alt="Agencies disappear after hiring" loading="lazy">
-          </div>
-          <div class="rlt-problem-card-body">
-            <div class="rlt-problem-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                <circle cx="9" cy="7" r="4" />
-                <line x1="23" y1="11" x2="17" y2="11" />
-              </svg>
-            </div>
-            <h3>Most Agencies Disappear After Hiring</h3>
-            <p>Many staffing providers focus only on placement. Long-term success requires ongoing support and
-              management.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- problem section end -->
-  <!-- ============================================================
-     SECTION 4 — THE RLT DIFFERENCE
-     ============================================================ -->
-  <style>
-    /* ─── RLT DIFFERENCE SECTION ─── */
-    .rlt-difference-section {
-      background-color: #ffffff;
-      padding: 96px 0;
-      border-top: 1px solid rgba(8, 34, 61, 0.06);
+    /* ─── FEATURED PROBLEM CARD (Card 3 — The RLT Difference) ─── */
+    .rlt-problem-card--featured {
+      border: 2px solid var(--rlt-navy, #08223D);
+      box-shadow: 0 8px 32px rgba(8, 34, 61, 0.18);
     }
 
-    .rlt-difference-intro {
-      max-width: 640px;
-      margin: 0 auto 64px;
-      text-align: center;
-    }
-
-    .rlt-difference-intro h2 {
-      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
-      font-weight: 900 !important;
-      font-size: clamp(2.25rem, 4vw, 3.25rem);
-      line-height: 1.15;
-      letter-spacing: 0.03em;
-      text-transform: none;
-      color: var(--rlt-navy, #08223D);
-      margin-bottom: 16px;
-    }
-
-    .rlt-difference-intro .rlt-lead {
-      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
-      font-weight: 400;
-      font-size: 1.0625rem;
-      line-height: 1.75;
-      letter-spacing: 0.025em;
-      color: rgba(8, 34, 61, 0.65);
-      margin: 0;
-    }
-
-    /* 3-column blocks */
-    .rlt-difference-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 0;
-      border: 1px solid rgba(8, 34, 61, 0.1);
-      border-radius: 20px;
-      overflow: hidden;
-    }
-
-    /* Standard block */
-    .rlt-diff-block {
-      padding: 48px 40px;
-      background-color: #ffffff;
-      border-right: 1px solid rgba(8, 34, 61, 0.1);
-      transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-        box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      z-index: 0;
-    }
-
-    /* Slide-in blue fill on standard blocks */
-    .rlt-diff-block:not(.is-differentiator)::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: var(--rlt-blue, #0055B8);
-      z-index: -1;
-      transform: scaleY(0);
-      transform-origin: bottom center;
-      transition: transform 0.4s cubic-bezier(0.86, 0, 0.09, 1);
-    }
-
-    .rlt-diff-block:not(.is-differentiator):hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0, 85, 184, 0.25);
-    }
-
-    .rlt-diff-block:not(.is-differentiator):hover::before {
-      transform: scaleY(1);
-    }
-
-    .rlt-diff-block:last-child {
-      border-right: none;
-    }
-
-    /* Highlighted differentiator block */
-    .rlt-diff-block.is-differentiator {
+    .rlt-problem-card--featured .rlt-problem-card-body {
       background-color: var(--rlt-navy, #08223D);
-      border-right: none;
-      border-left: none;
-      overflow: hidden;
-      z-index: 0;
     }
 
-    /* Blue fill slides in from bottom on differentiator hover */
-    .rlt-diff-block.is-differentiator::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-color: #0055B8;
-      z-index: -1;
-      transform: scaleY(0);
-      transform-origin: bottom center;
-      transition: transform 0.4s cubic-bezier(0.86, 0, 0.09, 1);
+    .rlt-problem-card--featured h3 {
+      color: #ffffff;
     }
 
-    .rlt-diff-block.is-differentiator:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 40px rgba(0, 85, 184, 0.40);
+    .rlt-problem-card--featured p {
+      color: rgba(246, 246, 246, 0.78);
     }
 
-    /* Differentiator badge */
-    .rlt-diff-badge {
+    .rlt-problem-card--featured .rlt-problem-icon {
+      background-color: rgba(205, 222, 0, 0.15);
+      color: var(--rlt-lime, #CDDE00);
+    }
+
+    .rlt-problem-card--featured:hover .rlt-problem-icon {
+      background-color: rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+    }
+
+    .rlt-problem-card--featured:hover h3 {
+      color: #ffffff;
+    }
+
+    .rlt-problem-card--featured:hover p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Override the blue hover fill for featured — use a brighter blue instead */
+    .rlt-problem-card--featured::after {
+      background: linear-gradient(135deg, #0055B8 0%, #003d85 100%);
+    }
+
+    /* Featured badge pill */
+    .rlt-problem-featured-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -1216,222 +1074,115 @@
       margin-bottom: 20px;
     }
 
-    /* Icon circle */
-    .rlt-diff-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 24px;
-      transition: background-color 0.35s ease, color 0.35s ease,
-        transform 0.5s cubic-bezier(0.86, 0, 0.09, 1);
+    /* ─── CLOSING STATEMENT ─── */
+    .rlt-problem-closing {
+      max-width: 640px;
+      margin: 56px auto 0;
+      text-align: center;
     }
 
-    .rlt-diff-block:not(.is-differentiator) .rlt-diff-icon {
-      background-color: rgba(0, 85, 184, 0.08);
-      color: var(--rlt-blue, #0055B8);
-    }
-
-    /* On hover of standard block: icon turns lime and spins */
-    .rlt-diff-block:not(.is-differentiator):hover .rlt-diff-icon {
-      background-color: rgba(205, 222, 0, 0.2);
-      color: var(--rlt-lime, #CDDE00);
-      transform: rotate3d(1, 1, 0, 360deg);
-    }
-
-    .rlt-diff-block.is-differentiator .rlt-diff-icon {
-      background-color: rgba(205, 222, 0, 0.15);
-      color: var(--rlt-lime, #CDDE00);
-    }
-
-    /* On hover of differentiator: icon turns white and spins */
-    .rlt-diff-block.is-differentiator:hover .rlt-diff-icon {
-      background-color: rgba(255, 255, 255, 0.15);
-      color: #ffffff;
-      transform: rotate3d(1, 1, 0, 360deg);
-    }
-
-    /* Block title */
-    .rlt-diff-block h3 {
-      font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
-      font-weight: 700 !important;
-      font-size: 1.25rem;
-      line-height: 1.25;
-      letter-spacing: 0.025em;
-      margin-bottom: 14px;
-      transition: color 0.3s ease;
-    }
-
-    .rlt-diff-block:not(.is-differentiator) h3 {
-      color: var(--rlt-navy, #08223D);
-    }
-
-    /* Standard block h3 turns white on hover */
-    .rlt-diff-block:not(.is-differentiator):hover h3 {
-      color: #ffffff;
-    }
-
-    .rlt-diff-block.is-differentiator h3 {
-      color: #ffffff;
-    }
-
-    /* Differentiator h3 turns white on hover (blue fill background) */
-    .rlt-diff-block.is-differentiator:hover h3 {
-      color: #ffffff;
-    }
-
-    /* Block body */
-    .rlt-diff-block p {
+    .rlt-problem-closing p {
       font-family: var(--rlt-font-family, 'Nunito Sans', sans-serif) !important;
       font-weight: 400;
-      font-size: 0.9375rem;
+      font-size: 1.125rem;
       line-height: 1.75;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.025em;
+      color: rgba(8, 34, 61, 0.65);
       margin: 0;
-      transition: color 0.3s ease;
     }
 
-    .rlt-diff-block:not(.is-differentiator) p {
-      color: rgba(8, 34, 61, 0.6);
-    }
-
-    /* Standard block p turns white on hover */
-    .rlt-diff-block:not(.is-differentiator):hover p {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    .rlt-diff-block.is-differentiator p {
-      color: rgba(246, 246, 246, 0.78);
-    }
-
-    /* Differentiator p turns white on hover */
-    .rlt-diff-block.is-differentiator:hover p {
-      color: rgba(255, 255, 255, 0.9);
-    }
-
-    /* Bottom accent - stays lime always, since it contrasts on the blue fill */
-    .rlt-diff-block.is-differentiator::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background-color: var(--rlt-lime, #CDDE00);
-      transition: opacity 0.3s ease;
-      z-index: 1;
-    }
-
-    .rlt-diff-block.is-differentiator:hover::after {
-      opacity: 0.5;
-    }
-
-    /* Differentiator hover: blue fill slides in from bottom */
-    .rlt-diff-block.is-differentiator:hover::before {
-      transform: scaleY(1);
-    }
-
-    @media (max-width: 991px) {
-      .rlt-difference-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .rlt-diff-block {
-        border-right: none;
-        border-bottom: 1px solid rgba(8, 34, 61, 0.1);
-      }
-
-      .rlt-diff-block:last-child {
-        border-bottom: none;
-      }
-
-      .rlt-diff-block.is-differentiator {
-        border-bottom: none;
-      }
-
-      .rlt-diff-block {
-        padding: 40px 32px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .rlt-difference-section {
-        padding: 64px 0;
-      }
+    .rlt-problem-closing strong {
+      color: var(--rlt-navy, #08223D);
+      font-weight: 700;
     }
   </style>
 
-  <section class="rlt-difference-section" id="difference">
+  <section class="rlt-problem-section" id="problem">
     <div class="container">
 
-      <div class="rlt-difference-intro">
-        <h2>More than recruiting,<br><span class="rlt-accent" style="display: inline-block; margin-top: 8px;">a
-            long-term family.</span></h2>
-        <p class="rlt-lead">At Real Latino Talent (RLT), we don't just connect businesses with talent - we help build,
-          support, and sustain remote teams for long-term success.</p>
+      <div class="rlt-section-heading">
+        <h2>Hiring remotely is <span class="rlt-accent">hard.</span><br>Managing remotely is even harder.</h2>
+        <p>Finding great talent is only the first step. Building a remote team that performs long-term is the real challenge.<br>That's where <strong>Real Latino Talent</strong> comes in.</p>
       </div>
 
-      <div class="rlt-difference-grid">
+      <div class="rlt-problem-grid">
 
-        <!-- Block 1: Curated Talent -->
-        <div class="rlt-diff-block">
-          <div class="rlt-diff-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="11" cy="11" r="8" />
-              <line x1="21" y1="21" x2="16.65" y2="16.65" />
-              <line x1="11" y1="8" x2="11" y2="14" />
-              <line x1="8" y1="11" x2="14" y2="11" />
-            </svg>
+        <!-- Card 1: Curated Talent -->
+        <div class="rlt-problem-card">
+          <div class="rlt-problem-card-image">
+            <img src="./assets/img/recruiting.jpg" alt="Curated Talent from Latin America" loading="lazy">
           </div>
-          <h3>Curated Talent</h3>
-          <p>We source bilingual professionals from Latin America with strong communication skills, technical expertise,
-            and cultural alignment.</p>
+          <div class="rlt-problem-card-body">
+            <div class="rlt-problem-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                <line x1="11" y1="8" x2="11" y2="14" />
+                <line x1="8" y1="11" x2="14" y2="11" />
+              </svg>
+            </div>
+            <h3>Curated Talent</h3>
+            <p>We source bilingual LATAM professionals with the skills, communication, and cultural fit your business needs.</p>
+          </div>
         </div>
 
-        <!-- Block 2: Tailored Matching -->
-        <div class="rlt-diff-block">
-          <div class="rlt-diff-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
+        <!-- Card 2: Tailored Matching -->
+        <div class="rlt-problem-card">
+          <div class="rlt-problem-card-image">
+            <img src="./assets/img/talent-matching.jpg" alt="Tailored Matching for your business" loading="lazy">
           </div>
-          <h3>Tailored Matching</h3>
-          <p>Every candidate is selected specifically for your company's needs, workflows, and long-term goals.</p>
+          <div class="rlt-problem-card-body">
+            <div class="rlt-problem-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+            </div>
+            <h3>Tailored Matching</h3>
+            <p>Every candidate is carefully selected to match your role, workflow, and company culture—not from a generic database.</p>
+          </div>
         </div>
 
-        <!-- Block 3: Ongoing Support (DIFFERENTIATOR) -->
-        <div class="rlt-diff-block is-differentiator">
-          <div class="rlt-diff-badge">
-            <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none">
-              <polygon
-                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
-            </svg>
-            Our Main Differentiator
+        <!-- Card 3: The RLT Difference (Featured) -->
+        <div class="rlt-problem-card rlt-problem-card--featured">
+          <div class="rlt-problem-card-image">
+            <img src="./assets/img/team-support.jpg" alt="The RLT Difference - Ongoing Support" loading="lazy">
           </div>
-          <div class="rlt-diff-icon">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-              stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-              <circle cx="9" cy="7" r="4" />
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-            </svg>
+          <div class="rlt-problem-card-body">
+            <div class="rlt-problem-featured-badge">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              The RLT Difference
+            </div>
+            <div class="rlt-problem-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                <circle cx="9" cy="7" r="4" />
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+              </svg>
+            </div>
+            <h3>Ongoing Support</h3>
+            <p>Unlike traditional recruiters, we stay involved after hiring with ongoing communication, follow-ups, and team support.</p>
           </div>
-          <h3>Ongoing Support</h3>
-          <p>Unlike traditional recruiting agencies, we stay actively involved after hiring - with regular check-ins,
-            performance follow-ups, and direct communication support to keep your remote team running smoothly, month
-            after month.</p>
         </div>
 
       </div>
+
+      <!-- Closing statement -->
+      <div class="rlt-problem-closing">
+        <p>We don't just help you hire. <strong>We help you build a remote team that lasts.</strong></p>
+      </div>
+
     </div>
   </section>
-  <!-- rlt difference section end -->
+  <!-- problem section end -->
+  <!-- RLT Difference section removed — content merged into problem section above -->
+
+
 
   <!-- ============================================================
      SECTION 5 — HOW IT WORKS (CLARO BENTO LAYOUT)
