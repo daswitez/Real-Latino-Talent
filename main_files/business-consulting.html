@@ -999,6 +999,10 @@
       padding: 36px 32px;
       position: relative;
       overflow: hidden;
+      width: 100%;
+      max-width: 442.66px;
+      height: 456.89px;
+      margin: 0 auto;
       /* Smooth lift + shadow on hover (matches template .count-text pattern) */
       transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
         box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
@@ -1926,6 +1930,9 @@
     /* ─── ROLE CARD IMAGE UPGRADE ─── */
     .role-card {
       padding: 0;
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
     }
 
     .role-card-img {
@@ -2603,7 +2610,7 @@
 
       <div class="rlt-advantage-heading">
         <div class="rlt-advantage-badge">The RLT Advantage</div>
-        <h2>Why companies choose<br>Real Latino Talent.</h2>
+        <h2>Why companies <br class="d-lg-none">choose<br>Real Latino Talent.</h2>
       </div>
 
       <div class="rlt-advantage-grid">
@@ -3516,28 +3523,16 @@
       }
 
       .rlt-about-images {
-        grid-template-columns: 1fr 1fr;
-        gap: 12px;
+        grid-template-columns: 1fr;
+        gap: 24px;
       }
 
       .rlt-about-photo-card img {
-        min-height: 260px;
+        min-height: 420px;
+        height: auto;
       }
 
-      .rlt-about-photo-badge {
-        padding: 10px 10px;
-        gap: 8px;
-      }
-
-      .rlt-about-photo-badge .badge-initial {
-        width: 30px;
-        height: 30px;
-        font-size: 0.75rem;
-      }
-
-      .rlt-about-photo-badge .badge-info strong {
-        font-size: 0.7rem;
-      }
+      /* Badge uses desktop styling since it's full width */
     }
   </style>
 
@@ -4835,6 +4830,16 @@ https://www.instagram.com/reallatinotalent/
     }
 
     @media (max-width: 991px) {
+      body.rlt-business-page .rlt-problem-card {
+        max-width: 350px;
+        height: 480.39px;
+      }
+      
+      body.rlt-business-page .role-card {
+        max-width: 350px;
+        min-height: 593.48px;
+      }
+
       body.rlt-business-page .rlt-hero {
         display: flex;
         flex-direction: column;
