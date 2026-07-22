@@ -3573,7 +3573,7 @@
 
           <!-- Sebastián Antelo -->
           <div class="rlt-about-photo-card">
-            <img src="assets/img/sergio.jpeg" alt="Sebastián Antelo — Co-Founder of Real Latino Talent" loading="lazy">
+            <img src="assets/img/sergio.jpeg" alt="Sebastián Antelo — Co-Founder of Real Latino Talent" loading="lazy" style="object-position: center;">
             <div class="rlt-about-photo-badge">
               <div class="badge-initial">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
@@ -3752,6 +3752,11 @@
       margin: 0 24px 0 28px;
     }
 
+    /* Spacer between top and separator */
+    .rlt-meet-spacer {
+      height: 20px;
+    }
+
     /* Lower block — bio starts here, same height across all cards */
     .rlt-meet-bottom {
       flex: 1;
@@ -3812,7 +3817,11 @@
       }
 
       .rlt-meet-top {
-        padding: 28px 18px 16px 22px;
+        padding: 28px 18px 0px 22px;
+      }
+
+      .rlt-meet-spacer {
+        height: 8px;
       }
 
       .rlt-meet-bottom {
@@ -3853,7 +3862,7 @@
               <p class="rlt-meet-name">Lucía Camacho</p>
               <p class="rlt-meet-role">Operations & Administration</p>
             </div>
-            <div style="padding-top: 20px;"></div>
+            <div class="rlt-meet-spacer"></div>
             <div class="rlt-meet-sep"></div>
             <div class="rlt-meet-bottom">
               <p class="rlt-meet-bio">Supports operations, administration, and client coordination.</p>
@@ -3872,7 +3881,7 @@
               <p class="rlt-meet-name">Nazarena Leigue</p>
               <p class="rlt-meet-role">Creative & Marketing</p>
             </div>
-            <div style="padding-top: 20px;"></div>
+            <div class="rlt-meet-spacer"></div>
             <div class="rlt-meet-sep"></div>
             <div class="rlt-meet-bottom">
               <p class="rlt-meet-bio">Leads branding, graphic design, and marketing initiatives.</p>
@@ -3891,8 +3900,7 @@
               <p class="rlt-meet-role">Client </p>
               <p class="rlt-meet-role">Outreach</p>
             </div>
-            <div style="padding-top: 20px;">
-            </div>
+            <div class="rlt-meet-spacer"></div>
             <div class="rlt-meet-sep"></div>
             <div class="rlt-meet-bottom">
               <p class="rlt-meet-bio">Supports business development through client outreach and relationship building.
